@@ -1,0 +1,25 @@
+
+The n-Subjettiness variable $\tau_N$, introduced in Reference \cite{bib:nsub}, quantifies the level of agreement between a given large-R jet and a certain number $N$ of sub-jet axes. Several possibilities to define the sub-jet axes exist. Two often used definitions are $k_\mathrm{T}$-axes and the $k_\mathrm{T}$-WTA (Winner Takes All) definition. In both cases, the jet is reclustered with an exclusive $k_\mathrm{T}$-algorithm, that is running the recombination just until $N$ sub-jets are clustered. The $k_\mathrm{T}$-axes are defined by the four-momenta of the $k_\mathrm{T}$-sub-jets, WTA correspond to the four-momentum of the hardest constituent in each $k_\mathrm{T}$-sub-jet. Used in this study is th $k_\mathrm{T}$-WTA axis definition. 
+
+As C2 and D2, N-Subjettiness is a measure for the whole jet, calculated via a sum over the jets constituents (calorimeter clusters as default).
+\begin{equation}
+\tau_N = \frac{1}{d_0}\sum_k p_{T,k}\:min(\Delta R_{1,k},\Delta R_{2,k},...,\Delta R_{N,k})^{\beta}
+\end{equation}
+
+For each term, the constituents $p_{\mathrm{T}}$ is multiplied by the distance to the nearest sub-jet axes. The overall value is normalized with a sum over the constituents $p_{\mathrm{T}}$ times the characteristic radius parameter $R$ of the large jet.
+\begin{equation}
+d_0=\sum_k p_{T,k}R_0
+\end{equation}
+Similar to ECF(N,$\beta$), the angular measure $\Delta R_{ij}$ can be scaled relative to the $p_{\mathrm{T}}$ factor via the exponent $\beta$. N-Subjettiness is an IRC-safe variable for values of $\beta \ge 0$.
+
+Small values of $\tau_N$ correspond to a jet with all constituents more or less aligned or near to the given $N$ sub-jet axes, hence the jet is compatible with the assumption to be composed of $N$ or fewer sub-jets. A higher value in contrast indicates a consistency with more than $N$ sub-jets as a non negligible part is located apart of the $N$ sub-jet axes. Consequently, $W/Z$ or Higgs boson jets are likely to feature a small $\tau_2$ and a high $\tau_1$ value. QCD jets with their one-prong structure result in a high $\tau_{2}$ and a small $\tau_{1}$ value. While $\tau_1$ and $\tau_2$ alone provide only slightly separation, the ratio 
+\begin{equation}
+\tau_{21} = \frac{\tau_2}{\tau_1}  
+\end{equation}
+is an effective discrimination variable.
+
+The extension to three-prong like jet identification and discrimination from one and two-prong structures follows quite naturally by taking the ratio of $\tau_3$ and $\tau_2$.
+\begin{equation}
+\tau_{32} = \frac{\tau_3}{\tau_2}  
+\end{equation} \\
+Consequently, the hadronic decay of top quarks via $t \rightarrow Wb$ and the $W$ decaying into two quarks can be tagged using the $\tau_{32}$ variable.

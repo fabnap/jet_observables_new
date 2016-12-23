@@ -1,0 +1,609 @@
+%-------------------------------------------------------------------------------
+% This file provides a skeleton ATLAS document.
+%-------------------------------------------------------------------------------
+% \pdfoutput=1
+% The \pdfoutput command is needed by arXiv/JHEP/JINST to ensure use of pdflatex.
+% It should be included in the first 5 lines of the file.
+%-------------------------------------------------------------------------------
+% Specify where ATLAS LaTeX style files can be found.
+\newcommand*{\ATLASLATEXPATH}{latex/}
+
+% Use this variant if the files are in a central location, e.g. $HOME/texmf.
+% \newcommand*{\ATLASLATEXPATH}{}
+%-------------------------------------------------------------------------------
+\documentclass[UKenglish,texlive=2013]{\ATLASLATEXPATH atlasdoc}
+
+% The language of the document must be set: usually UKenglish or USenglish.
+% british and american also work!
+% Commonly used options:
+%  texlive=YYYY          Specify TeX Live version (2013 is default).
+%  atlasstyle=true|false Use ATLAS style for document (default).
+%  coverpage             Create ATLAS draft cover page for collaboration circulation.
+%                        See atlas-draft-cover.tex for a list of variables that should be defined.
+%  cernpreprint          Create front page for a CERN preprint.
+%                        See atlas-preprint-cover.tex for a list of variables that should be defined.
+%  PAPER                 The document is an ATLAS paper (draft).
+%  CONF                  The document is a CONF note (draft).
+%  PUB                   The document is a PUB note (draft).
+%  BOOK                  The document is of book form, like an LOI or TDR (draft)
+%  txfonts=true|false    Use txfonts rather than the default newtx - needed for arXiv submission.
+%  paper=a4|letter       Set paper size to A4 (default) or letter.
+
+%-------------------------------------------------------------------------------
+% Extra packages:
+% \usepackage{\ATLASLATEXPATH atlaspackage}
+\usepackage[subcaption]{\ATLASLATEXPATH atlaspackage}
+\usepackage{overpic}	
+
+\newcommand\crule[3][black]{\textcolor{#1}{\rule{#2}{#3}}}
+% Commonly used options:
+%  biblatex=true|false   Use biblatex (default) or bibtex for the bibliography.
+%  backend=biber         Use the biber backend rather than bibtex.
+%  subfigure|subfig|subcaption  to use one of these packages for figures in figures.
+%  minimal               Minimal set of packages.
+%  default               Standard set of packages.
+%  full                  Full set of packages.
+%-------------------------------------------------------------------------------
+% Style file with biblatex options for ATLAS documents.
+\usepackage{\ATLASLATEXPATH atlasbiblatex}
+
+% Package for creating list of authors and contributors to the analysis.
+\usepackage{\ATLASLATEXPATH atlascontribute}
+
+% Useful macros
+\usepackage{\ATLASLATEXPATH atlasphysics}
+% See doc/atlas_physics.pdf for a list of the defined symbols.
+% Default options are:
+%   true:  journal, misc, particle, unit, xref
+%   false: BSM, heppparticle, hepprocess, hion, jetetmiss, math, process, other, texmf
+% See the package for details on the options.
+
+%% custom stuff
+% \usepackage{subcaption}
+% \captionsetup{compatibility=false}
+
+% \newcommand{\pt}{p_{T}}
+\newcommand{\mta}{m^{TA}}
+\newcommand{\mtas}{m^{TAS}}
+\newcommand{\mcal}{m^{calo}}
+\newcommand{\mcomb}{m^{comb}}
+\newcommand{\mcombtas}{m^{comb}_{TAS}}
+\newcommand{\cme}{\sqrt{s}}
+\newcommand{\iqr}{\frac{1}{2}\: \times\: 68\% \:\textrm{IQnR/median}}
+\def\spvec#1{\left(\vcenter{\halign{\hfil$##$\hfil\cr \spvecA#1;;}}\right)}
+\def\spvecA#1;{\if;#1;\else #1\cr \expandafter \spvecA \fi}
+
+% Files with references for use with biblatex.
+% Note that biber gives an error if it finds empty bib files.
+\addbibresource{mydocument.bib}
+\addbibresource{bibtex/bib/ATLAS.bib}
+
+% Paths for figures - do not forget the / at the end of the directory name.
+\graphicspath{{logos/}{figures/}}
+
+% Add you own definitions here (file mydocument-defs.sty).
+\usepackage{mydocument-defs}
+\usepackage{rotating}
+
+%-------------------------------------------------------------------------------
+% Generic document information
+%-------------------------------------------------------------------------------
+
+% Title, abstract and document 
+\input{mydocument-metadata}
+% Author and title for the PDF file
+\hypersetup{pdftitle={ATLAS document},pdfauthor={The ATLAS Collaboration}}
+
+%-------------------------------------------------------------------------------
+% Content
+%-------------------------------------------------------------------------------
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+% List of contributors - print here or after the Bibliography.
+%\PrintAtlasContribute{0.30}
+%\clearpage
+
+%-------------------------------------------------------------------------------
+\section{Introduction}
+\label{sec:intro}
+
+%-------------------------------------------------------------------------------
+
+
+Jets are collimated streams of particles resulting from quarks and gluons fragmentation and hadronization.
+The distribution of energy inside a jet contains information about the initiating particle. When a massive
+particle such as a top quark, Higgs boson or W/Z bosons is produced with significant Lorentz boost and decays into
+quarks, the entire hadronic decay may be captured inside a single jet. The mass of such jets (jet mass)
+is one of the most powerful tools for distinguishing massive particle decays from the continuum multijet
+background; the Energy Correlation Functions and n-Subjettiness C2, D2, $\tau_{21}$ and $\tau_{32}$ provide an ad-hoc tool pupusely developed for the multijet background and constitue a fundamental part of many for boson taggers.
+This note documents the so-called subjet-assisted techniques with the ATLAS detector. 
+The track-assisted subjet mass $m^{TAS}$ definition is presented and confronted with the standard development in ATLAS, $m^{comb}$ and $m^{TA}$. 
+Energy Correlation Functions and n-Subjettiness with the modified subjet-assisted technique are presented and confronted with the standard one in ATLAS.
+The note ends with conclusions for the jet observables using subjet-assisted tracks.
+
+% %-------------------------------------------------------------------------------
+% \section{Theory Introduction}
+% \label{sec:theory}
+
+% %-------------------------------------------------------------------------------
+
+
+
+
+
+% %-------------------------------------------------------------------------------
+% \section{ATLAS detector}
+% \label{sec:detector}
+% %-------------------------------------------------------------------------------
+
+% ATLAS (A Toroidal ApparatuS) is a multi-purpose particle detector with nearly 4$\pi$ coverage in solid angle. A lead/liquid-argon
+% sampling electromagnetic calorimeter is split into barrel ($|\eta|$ $<$ 1.5) and end-cap (1.5 $<$ $|\eta|$ $<$ 3.2) sections.
+% A steel/scintillating-tile hadronic calorimeter covers the barrel region ($|\eta|$ $<$ 1.7) and two end-cap
+% copper/liquid-argon sections extend to higher pseudo-rapidity (1.5 $<$ $|\eta|$ $<$ 3.2). Finally, the forward
+% region (3.1 $<$ $|\eta|$ $<$ 4.9) is covered by a liquid-argon calorimeter with Cu (W), absorber in the electromagnetic (hadronic) section.
+% Inside the calorimeters there is a 2 T solenoid that surrounds an inner tracking detector which measures charged particle trajectories covering a pseudo-rapidity range $|\eta|$ $<$ 2.5 with pixel and silicon micro-strip detectors
+% (SCT) and additionally which covers the region $|\eta|$ $<$ 2.0 with a straw-tube transition radiation tracker (TRT).
+% Outside the calorimeter there is a muon spectrometer: a system of detectors for triggering up to $|\eta|$ $<$ 2.4 and
+% precision tracking chambers up to $|\eta|$ $<$ 2.7 inside a magnetic field supplied by three large superconducting toroid magnets.
+
+% A breakdown of the ATLAS sub-detector performance is shown in Table \ref{tab:recap}.
+
+% \begin{table}
+% \begin{center}
+% \begin{tabular}{l|r}
+% % \toprule
+% \hline
+% % \multicolumn{2}{c}{} \\
+% % \cmidrule(r){1-2}
+% \hline
+% % \cmidrule(r){1}
+% ATLAS    & Description and performance  \\
+% % \midrule
+% \hline
+
+% Magnetic field      & 2 T solenoid; 0.5 T toroid barrel and 1 T toroid end-cap         \\
+% \\
+% \cline{1-1}
+% Tracker       & Inner detector: IBL, Silicon pixel and strips, TRT\\
+%           & $\sigma_{p_T}/p_T \simeq   5\times 10^{-4}p_T \otimes 1\% $           \\
+%           \\
+% \cline{1-1}
+% EM calorimeter       & EMB, EMEC and pre-sampler (Liquid Argon and lead)           \\
+% & $\sigma_{E}/E \simeq 10\%/\sqrt{E} \otimes 0.7\%$ \\
+% \\
+% \cline{1-1}
+% Hadronic calorimeter & Tile (Fe and scintillating tiles) and HEC (Cu and LAr)              \\
+% & $\sigma_{E}/E \simeq 50\%/\sqrt{E} \otimes 3\%$ \\
+% \\
+% \cline{1-1}
+% Muons & Inner detector and muon spectrometers \\
+%           & $\sigma_{p_T}/p_T \simeq   2\% $ at 50 GeV           \\
+%           & $\sigma_{p_T}/p_T \simeq   10\%$ at 1  TeV           \\
+% \\
+% \cline{1-1}
+% Trigger &  L1 and HLT (L2 and EF)\\
+% & Rates from $\sim$40 MHz to $\sim$75 kHz (L1) and to $\sim$200 Hz (HLT)\\
+
+% \hline
+% \hline
+% % \bottomrule
+% \end{tabular}
+% \end{center}
+% % \end{table}
+% %-------------------------------------------------------------------------------
+% \section{Monte Carlo Samples}
+% \label{sec:mcsample}
+% %-------------------------------------------------------------------------------
+
+% % *refraseMT*
+% The samples used are divided into two main groups: SM background and beyond SM signal. The SM background includes the QCD multijet samples, produced with a falling $\pt$ spectrum. The beyond SM signals are $W'\to WZ\to q\bar{q}'q\bar{q}$, $Z'\to t\bar{t}$ (top quarks considered in the full hadronic channel ($t\to W(\to q\bar{q}')b$)) and RS-Graviton $\to hh \to b\bar{b}b\bar{b}$, i.e. final states have only jets in all the samples. The details of the samples are given in Table \ref{tab:mcsamples}; the masses considered span from 0.5 to 5 TeV to improve and diversify the kinematic space covered.
+
+% A set of kinematic distributions for the $W'$ is shown in Figure \ref{fig:wprimekinematic}: on the left the $\pt$ distribution where the kinks correspond to the Jacobian peak of the mass considered and the $\eta$ distribution on the right. The green dots represent the distribution before the selection, which is $\pt >$ 250 GeV and $|\eta|<$ 2.0 and the red dots after this selection. This selection typical for many searches for BSM physics.  All the other samples and the background can be found in the Appendix. 
+% In what follows, it will also be used the nomenclature \textit{boosted W/Z} for the $W'$ sample, \textit{boosted tops} for the $Z'$ sample, \textit{boosted Higgs} for the $G_{RS}$ sample and \textit{massive $W$} for the $W' \to \tilde{W}\tilde{W}$ with $m_{\tilde{W}}=m_t$.
+% % *refraseMT*
+
+% \begin{table}
+% \centering
+% \hspace*{-3em}\begin{tabular}{l|lllr}  
+% % \toprule
+% \hline
+% \hline
+% Process & ME Generator & ME PDFs &  UE Tune & Resonance Masses\\
+%   & \& Fragmentation &  & & \\
+
+% \hline
+% QCD multijet &Pythia 8&NNPDF23LO & A14& N/A \\
+% \hline
+% $W'\to WZ$ &Pythia 8&NNPDF23LO & A14& 1.5, 2.5, 3, 4, 5 TeV \\
+% \cline{1-1}
+% $Z'\to t\bar{t}$ &Pythia 8&NNPDF23LO & A14& 1.5, 1.75, 2.5, 3, 4, 5 TeV \\
+% \cline{1-1}
+% $G_{RS} \to hh(\to b\bar{b})$ &Pythia 8&NNPDF23LO & A14& 0.5, 1, 1.5, 2, 2.5, 3 TeV\\
+% \cline{1-1}
+% $W' \to \tilde{W}\tilde{W}$ &Pythia 8&NNPDF23LO & A14& 1.5, 2.5, 3, 4, 5 TeV \\
+% with $m_{\tilde{W}}=m_t$ & & & & \\
+% \hline
+% \hline
+% % \bottomrule
+% \end{tabular}
+% \caption[Overview of the Monte Carlo Samples used]{Overview of the Monte Carlo Samples used. The first line shows QCD standard model process, the second, the third and the forth the beyond SM samples considered; the last line the ``massive $W/Z$'' sample.}
+% \label{tab:mcsamples}
+% % \end{center}
+% \end{table}
+
+%-------------------------------------------------------------------------------
+\section{Object Definition}
+\label{sec:objdef}
+%-------------------------------------------------------------------------------
+
+This section gives an overview of the objects used for the subjet-assisted variables, which are the large-radius jet mass, the Energy Correlation Functions and the n-Subjettiness, as they are used within ATLAS, the next section will give the details of the modified approach of the subjet-assisted techniques.
+
+
+\input{fab1.tex}
+
+
+\subsection{Energy Correlation Functions}\label{subsec:ECF}
+\input{sascha_input/ECF}
+
+\subsection{n-Subjettiness}\label{subsec:nSub}
+\input{sascha_input/nSub}
+
+\subsection{Receiver Operator Characteristics}\label{sec:ROC}
+The separation power of discrimination variables can be studied quite intuitively by comparing the signal and background distributions of a certain variable. Another used figure of merit for the performance, especially for comparisons of different variables, is to use \textsc{Receiver Operator Characteristics} (ROCs) which show the achieved background rejection for different values of signal efficiency (signal fraction left after performing a cut). 
+Each point is calculated from the underlying signal and background distributions by integrating the background distribution from zero \footnote[1]{If the signal distribution lies at lower values as the background.} to the point where the desired signal fraction is achieved. The fraction of background events contained in this region are kept when cutting at this signal efficiency, hence the inverse of this fraction, $\frac{1}{\epsilon_{background}}$ is an estimate for the background rejection. The lower the fraction of background events in the region, the better is the achieved exclusion. Accordingly, a good discrimination variable is represented by a ROC with preferably high values of background rejection up to high signal efficiencies.
+
+
+
+%-------------------------------------------------------------------------------
+\section{Track-assisted subjet mass}
+\label{sec:mtas}
+%-------------------------------------------------------------------------------
+The track-assisted subjet mass takes inspiration from the simpler development which is already implemented within ATLAS, the track-assisted mass which is described briefly below for completeness.
+
+\input{fab2.tex}
+
+%-------------------------------------------------------------------------------
+\section{Energy Correlation Functions and n-Subjettiness}\label{subsec:ta_adapt}
+\input{sascha_input/technics}
+
+\subsection{Track Selection}
+\input{sascha_input/TrackSelection}
+
+\subsection{Performance with default $\beta$}
+\input{sascha_input/results_beta1}
+
+\subsection{Optimisation of $\beta$}
+\input{sascha_input/beta_opt}
+
+\label{sec:ECFnS}
+%----------------------------------
+
+
+
+%-------------------------------------------------------------------------------
+\section{Conclusions \& Outlook}
+\label{sec:conclusions}
+%----------------------------------
+\subsection{Jet mass observables}
+The $\mtas$ variable was developed for the large-$R$ jet mass; it combines the information of the tracker- and calorimeter-system to achieve an higher precision in the jet mass reconstruction, correcting the missed neutral fraction which is absent in the tracker but not in the calorimeter.
+With respect to the $\mta$, it applies this correction at sub-jet by sub-jet level and not at jet by jet level, therefore providing a more accurate reconstruction. 
+It was shown in Monte Carlo simulation to be a very good observable confronting quantitatively with the other definitions which are either standard or in preparation, $\mcal$, $\mta$ and $\mcomb$.
+% In fact, it behaves better in terms of $\iqr$ and all the other ways to look at the figure of merit, the mass response, for the boosted $W/Z$ and QCD sample; is always better than the $\mta$ and similar to the $\mcal$ for the boosted tops and Higgs.
+% Moreover, it is a slightly worse observable than the $\mcomb$, yet being comparable, and avoiding the development of ad-hoc weights.
+The optimal configuration of $\mtas$ is shown and confronted with different approaches, in particular in terms of different trimming procedure of the large-$R$ jet to be used as an input.
+All the components of the observable have been studied with the use of truth Monte Carlo information without detector effect, in order to evaluate quantitatively its limits and strengths; the track $\pt$ measure degradation was found to be the cause of the variable decreasing performance at higher transverse momenta.
+
+The $\mcombtas$ is the logical extension of the $\mtas$, which improves by construction the results beyond the $\mcal$ and the $\mtas$, combining these two variables on the same way of the $\mcomb$, but taking into account the higher correlation factor which is inherited from the sub-jet usage.
+Weights for its construction can be in both cases either derived specifically for the sample considered, or constructed on average with the QCD sample, in this case getting a sub-optimal performance. 
+In all the cases studied, it has a better behavior than the $\mcomb$, $\mcal$ and $\mta$.
+
+For the very conclusion, both the variables constructed in the work of this thesis,$\mtas$ and $\mcombtas$, exhibit a better performance of their counterparts, $\mta$ and $\mcomb$, which are now ready to be use or in preparation within the ATLAS collaboration, and share the same advantages -and disadvantages. Further steps are necessary to get this observables to usage: calibration and uncertainties.
+
+% \subsubsection{Outlook}
+% The outlook of the $\mtas$ and $\mcombtas$ variables follows two main scenarios, concerning the calibration and uncertainties determination which are necessary to get this observables ready to be used. The procedure involved are already fully understood, since the the same was applied or is being applied for the $\mta$ and $\mcomb$.
+
+% For the simple scenario here the procedure that would take place is the direct Monte Carlo calibration of the $\mtas$, aiming at correcting the reconstructed jet mass to the particle-level jet mass by applying the calibration factors derived from QCD multijet events, an analogous procedure to the one described in Section \ref{sec:calib} for the jet energy scale.
+
+% The more complex scenario considers an additional calibration to the sub-jets with R=0.2, which is already at an advanced stage within ATLAS for anti-k$_t$ reclustering algorithm (it has a slightly worse performance than k$_t$, as presented previously). 
+
+% The uncertainties are expected to be similar to the one which were derived for the $\mta$ and which are compared to the $\mcal$ on Figure \ref{fig:uncert}; the tracking uncertainties are smaller for the track-assisted mass because of the ratio $m^{track}/p_T^{track}$ and will be smaller as well for the track-assisted  sub-jet mass since it uses the same ratio.
+
+% In-situ uncertainties were derived for the $\mta$ with a sample of enriched top-quark; the same technology used here can be applied to the $\mtas$.
+
+% In the more complex scenario, the uncertainties could be derived for the sub-jets R=0.2 reclustered with anti-k$_{t}$.
+%------------------------------------------------------------------------------
+\subsection{Energy Correlation Functions and n-Subjettiness}
+
+***here sascha conclusions***
+
+%-------------------------------------------------------------------------------
+\clearpage
+\appendix
+\part*{Appendix}
+\addcontentsline{toc}{part}{Appendix}
+%-------------------------------------------------------------------------------
+
+% In a paper, an appendix is used for technical details that would otherwise disturb the flow of the paper.
+% Such an appendix should be printed before the Bibliography.
+
+\input{appendixfab.tex}
+\input{sascha_input/appendixsascha.tex}
+
+%-------------------------------------------------------------------------------
+% If you use biblatex and either biber or bibtex to process the bibliography
+% just say \printbibliography here
+
+\begin{thebibliography}{9}
+
+\bibitem{pdg2014}
+  Particle Data Group Collaboration, K. Olive \emph{et al.},
+  \emph{ Review of Particle Physics},
+Chinese Physics C 38 (2014) 090001.
+
+\bibitem{zprime}
+Paul Langacker,
+\emph{The Physics of Heavy
+Z Gauge Bosons}. In: Rev. Mod. Phys.
+81 (2009), pp. 1199–1228. doi: 10.1103/RevModPhys.81.1199. arXiv: 0801.1345
+[hep-ph].
+
+\bibitem{wprime}
+Martin Schmaltz and Christian Spethmann,
+\emph{Two Simple W’ Models for the Early
+LHC}. In: JHEP 07 (2011), p. 046. doi: 10.1007/JHEP07(2011)046. arXiv: 1011.
+5918 [hep-ph].
+
+\bibitem{diboson}
+Georges Aad \emph{et al.}
+\emph{Combination of searches for WW, WZ, and ZZ resonances
+in pp collisions at $\sqrt{s}$ = 8 TeV with the ATLAS detector}. In: Phys. Lett. B755
+(2016), pp. 285–305. doi: 10.1016/j.physletb.2016.02.015. arXiv: 1512.05099
+[hep-ex].
+
+\bibitem{dibosoncms}
+The CMS Collaboration,
+\emph{Search for massive resonances decaying into pairs of boosted bosons in semi-leptonic final states at $\cme$ = 8 TeV},
+CERN-PH-EP/2013-037
+2014/09/03
+arXiv:1405.3447v2 [hep-ex].
+
+\bibitem{pdgwprime}
+C. Patrignani \emph{et al.},
+Particle Data Group, Chin. Phys. C, 40, 100001 (2016).
+http://pdg.lbl.gov/2015/reviews/rpp2015-rev-wprime-searches.pdf
+
+\bibitem{pdgzprime}
+C. Patrignani \emph{et al.},
+Particle Data Group, Chin. Phys. C, 40, 100001 (2016).
+http://pdg.lbl.gov/2015/reviews/rpp2015-rev-zprime-searches.pdf
+
+\bibitem{rsgraviton}
+L. Randall and R. Sundrum,
+\emph{A Large Mass Hierarchy from a Small Extra Dimension},
+Phys. Rev. Lett. 83 (1999) 3370, arXiv: hep-ph/9905221.
+
+\bibitem{rsgraviton2}
+H. Davoudiasl, J.L. Hewett and T.G. Rizzo,
+\emph{Warped Phenomenology},
+Stanford Linear Accelerator Center
+Stanford CA 94309, USA,
+arXiv:hep-ph/9909255v1 6 Sep 1999.
+
+\bibitem{tdr}
+  ATLAS Collaboration,
+  \emph{ATLAS detector and physics performance: Technical Design Report, 1 \& 2} ,
+  Tech. Rep. ATLAS TDR 14, CERN/LHCC 99-14, Geneva, 1999.
+
+\bibitem{lhc}
+L. Evans and P. Bryant,
+\emph{LHC Machine}, JINST 3 (2008) S08001.
+
+\bibitem{qcdpdg}
+C. Patrignani \emph{et al.},
+Particle Data Group, Chin. Phys. C, 40, 100001 (2016).
+http://pdg.lbl.gov/2010/reviews/rpp2010-rev-qcd.pdf
+
+\bibitem{alphas}
+The CMS Collaboration,
+\emph{Measurement of the inclusive 3-jet production differential
+cross section in proton-proton collisions at 7 TeV and
+determination of the strong coupling constant in the TeV
+range},
+CERN-PH-EP/2013-037
+2015/05/04
+arXiv:hep-ph/14121633.
+
+\bibitem{alpha}
+The ATLAS Collaboration,
+\emph{Improved luminosity determination in pp collisions at $\sqrt {s} = 7\ \mathrm{TeV}$ using the ATLAS detector at the LHC},
+Eur. Phys. J. C (2013) 73: 2518. doi:10.1140/epjc/s10052-013-2518-3.
+
+\bibitem{tasso}
+W. Bartel \emph{et al.} [JADE Collaboration],
+\emph{Observation of Planar Three Jet Events in e + e -
+Annihilation and Evidence for Gluon Bremsstrahlung},
+Phys. Lett. B 91, 142 (1980).
+
+\bibitem{qcdhistory}
+Ahmed Ali (DESY), Gustav Kramer (Univ. Hamburg),
+\emph{Jets and QCD: A Historical Review of the Discovery of the Quark and Gluon Jets and its Impact on QCD},
+arXiv:1012.2288v2 [hep-ph].
+
+\bibitem{antiktalgo}
+Matteo Cacciari, Gavin P. Salam, Gregory Soyez,
+\emph{The anti-k$_t$ jet clustering algorithm},
+arXiv:0802.1189v2 [hep-ph]. 
+
+\bibitem{halzenmartin}
+F. Halzen, A.D. Martin and D.M. Scott,  
+Phys. Rev. D25 (1982) 754,
+Phys. Lett. B112 (1982) 160.
+
+\bibitem{partonshower}
+Torbjorn Sjostrand,
+\emph{Monte Carlo Generators},
+hep-ph/0611247,
+CERN-LCGAPP-2006-06.
+
+\bibitem{topocluster}
+W.~Lampl \emph{et al.},
+\emph{Calorimeter Clustering Algorithms: Description and Performance},
+ATL-LARG-PUB-2008-002.
+
+\bibitem{lcw}
+The ATLAS Collaboration,
+\emph{Jet energy resolution in proton-proton collisions at $\sqrt{s}=$7 TeV recorded in 2010 with the ATLAS detector},
+CERN-PH-EP-2012-191
+arXiv:1210.6210v1  [hep-ex].
+
+\bibitem{geant4}
+GEANT4 Collaboration (S. Agostinelli \emph{et al.}), 
+\emph{GEANT4: A Simulation toolkit},
+Nucl.Instrum.Meth. A506 (2003) 250-303
+DOI: 10.1016/S0168-9002(03)01368-8
+SLAC-PUB-9350, FERMILAB-PUB-03-339.
+
+\bibitem{calibration}
+Ariel Schwartzman,
+\emph{Jet energy calibration at the LHC},
+SLAC National Accelerator Laboratory, 2575 Sand Hill Road
+Menlo Park, California 94025, USA,
+arXiv:1509.05459v1 [hep-ex] 17 Sep 2015.
+
+\bibitem{art35}
+The ATLAS Collaboration,
+\emph{Jet mass reconstruction with the ATLAS Detector in early Run 2 data},
+ATLAS-CONF-2016-035
+19 July 2016.
+
+\bibitem{art39}
+The ATLAS Collaboration,
+\emph{Boosted Higgs ($\to b\bar{b}$) Boson Identification with the ATLAS
+Detector at $\cme$ = 13 TeV},
+ATLAS-CONF-2016-039
+30th July 2016.
+
+\bibitem{dibosonsearch}
+The ATLAS Collaboration,
+\emph{Search for high-mass diboson resonances with boson-tagged jets in proton-proton collisions at $\cme$ = 8 TeV with the ATLAS detector},
+arXiv:1506.00962v3 [hep-ex].
+
+\bibitem{dibosonsearchcms}
+The CMS Collaboration,
+\emph{Combination of searches for WW, WZ, ZZ, WH, and ZH
+resonances at $\cme$= 8 and 13 TeV},
+CMS PAS B2G-16-007.
+
+\bibitem{zprimetotops}
+The ATLAS Collaboration,
+\emph{Search for heavy particles decaying to pairs of highly-boosted top
+quarks using lepton-plus-jets events in proton-proton collisions at
+$\cme$ = 13 TeV with the ATLAS detector},
+ATLAS-CONF-2016-014.
+
+\bibitem{dibosonatlas}
+The ATLAS Collaboration,
+\emph{Search for resonances with boson-tagged jets in 15.5 $fb^{-1}$ of p-p
+collisions at $\cme$ = 13 TeV collected with the ATLAS detector},
+ATLAS-CONF-2016-055.
+
+\bibitem{dihiggsatlas}
+The ATLAS Collaboration,
+\emph{Search for pair production of Higgs bosons in the $bb\bar{b}\bar{b}$ final state
+using proton proton collisions at $\cme$ = 13TeV with the ATLAS detector},
+ATLAS-CONF-2016-049.
+
+\bibitem{substructure1}
+The ATLAS Collaboration,
+\emph{Performance of jet substructure techniques for large-R jets in proton-proton collisions at sqrt(s) = 7 TeV using the ATLAS detector},
+CERN-PH-EP-2013-069
+arXiv:1306.4945 [hep-ex].
+
+\bibitem{ue}
+Oleg Zenin, on behalf of the ATLAS Collaboration,
+\emph{Soft QCD and underlying event measurements at ATLAS},
+Nuclear and Particle Physics Proceedings
+Volumes 273275, April-June 2016, Pages 2053-2058
+37th International Conference on High Energy Physics (ICHEP).
+
+\bibitem{highlumi}
+Page title: JetSubstructureECFA2014 AtlasPublic TWiki
+Website name: Twiki.cern.ch
+URL:https://twiki.cern.ch/twiki/bin/view/AtlasPublic/JetSubstructureECFA2014
+Access date: 27th October 2016.
+
+\bibitem{statistic}
+E. Lehmann and G. Casella,
+\emph{Theory of Point Estimation},
+Springer Verlag, 1998,
+isbn: 0387985026.
+
+
+\bibitem{bib:power_counting}
+Andrew~J. Larkoski, Ian Moult, and Duff Neill.
+\emph {Power Counting to Better Jet Observables}.
+\newblock {\em JHEP}, 12:009, 2014.
+
+\bibitem{bib:analytic_ECF}
+Andrew~J. Larkoski, Ian Moult, and Duff Neill.
+\emph {Analytic Boosted Boson Discrimination}.
+\newblock {\em JHEP}, 05:117, 2016.
+
+\bibitem{bib:ECF}
+Andrew~J. Larkoski, Gavin~P. Salam, and Jesse Thaler.
+\emph {Energy Correlation Functions for Jet Substructure}.
+\newblock {\em JHEP}, 06:108, 2013.
+
+\bibitem{bib:nsub}
+Jesse Thaler and Ken Van~Tilburg.
+\emph {Identifying Boosted Objects with N-subjettiness}.
+\newblock {\em JHEP}, 03:015, 2011.
+
+
+\bibitem{bib:w_tagging}
+Georges Aad et~al.
+\emph {Identification of boosted, hadronically decaying W bosons and
+  comparisons with ATLAS data taken at $\sqrt{s} = 8$ TeV}.
+\newblock {\em Eur. Phys. J.}, C76(3):154, 2016.
+
+\bibitem{presentation}
+% Link to presentation in which different 4-momentum correction scheme was applied
+Jet Substructure and jet-by-jet tagging meeting:
+URL: https://indico.cern.ch/event/495766/contributions/1174422/attachments/1231007/1804520/JSS\_18Feb.pdf
+
+\end{thebibliography}
+\printbibliography
+% If you want to use the traditional BibTeX you need to use the syntax below.
+%\bibliographystyle{bibtex/bst/atlasBibStyleWoTitle}
+%\bibliography{mydocument,bibtex/bib/ATLAS}
+%-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+% Print the list of contributors to the analysis
+% The argument gives the fraction of the text width used for the names
+%-------------------------------------------------------------------------------
+\clearpage
+\PrintAtlasContribute{0.30}
+
+%-------------------------------------------------------------------------------
+\clearpage
+\appendix
+\part*{Auxiliary material}
+\addcontentsline{toc}{part}{Auxiliary material}
+%-------------------------------------------------------------------------------
+
+In an ATLAS paper, auxiliary plots and tables that are supposed to be made public 
+should be collected in an appendix that has the title \enquote{Auxiliary material}.
+This appendix should be printed after the Bibliography.
+At the end of the paper approval procedure, this information can be split into a separate document
+-- see \texttt{atlas-auxmat.tex}.
+
+In an ATLAS note, use the appendices to include all the technical details of your work
+that are relevant for the ATLAS Collaboration only (e.g.\ dataset details, software release used).
+This information should be printed after the Bibliography.
+
+\end{document}

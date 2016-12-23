@@ -1,0 +1,277 @@
+
+\subsection{Large-radius jet mass definitions}
+
+% Large-radius jet, or arge-$R$ jets are jets constructed with a radius parameter of the reclustering algorithm much bigger than the standard 0.4; within ATLAS the size of large-$R$ jets is 1.0 for anti-k$_t$ and 1.2 for C/A (the area of C/A is $\sim$20\% smaller than anti-k$_t$).
+
+% It is worth noting that, for a standard anti-k$_t$ 0.4 jet the active area \cite{antiktalgo} is $A_{anti-k_t}=\pi R^2 \simeq 0.5$, while it is $\simeq 3.14$ for 1.0 jet, i.e. around six times bigger.
+
+% Already from this ``geometrical'' point of view, the necessity of further techniques can be understood: the effect of soft radiation contamination from Pile-Up (PU) and Underlying Event (UE) will be in this case six times bigger and spoil the efficiency of the jet mass measurements.
+
+Large-radius jet, or large-$R$ jets are jets constructed with a radius parameter of the reclustering algorithm of 1.0 for those built using the anti-k$_t$ algorithm and 1.2 for the C/A algorithm.
+SInce the active area of this jets is typically six times bigger than their counterparts of radius 0.4 which is the usual choice of jet radii within ATLAS, the necessity of further techniques is required to have control over the effect of soft radiation contamination from Pile-Up (PU) and Underlying Event (UE).
+
+\subsubsection{Substructure: Grooming Techniques}
+
+% This section is based on the 7 TeV article on jet Substructure \cite{substructure1}.
+In order to use large-$R$ jets, it is necessary to gain additional information on the interior of these objects, i.e. using techniques that exploit its substructure allowing a jet-by-jet discrimination of the energy deposit most likely coming from the hard-scattering to other soft radiation.
+
+A common feature in substructure is the use of \textit{sub-jet}, i.e. jets obtained from a parent jet (e.g. the large-$R$ jet), using its constituent but running the jet reclustering algorithm with a smaller radius parameter; in one large-$R$ jet, typically there are two or more sub-jets depending on the originating process and its $\pt$.
+
+Techniques have been developed, both using sub-jets or directly constituents of a jet, which are referred to as \textit{grooming} algorithms.
+
+Grooming algorithms are designed to retain the characteristic substructure within such a large-$R$
+jet while reducing the impact of the fluctuations of the parton shower and the UE, thereby
+improving the mass resolution and mitigating the influence of pile-up.
+
+The grooming algorithms presented here are the most important ones in ATLAS: the \textit{Trimming}; other used as well, the \textit{Split-Filtering} and the \textit{Pruning} can be found in \cite{substructure1}. Details on Trimming, the most used within ATLAS and in this note, are given in the Appendix.
+
+
+\subsubsection{Calorimeter Mass}
+
+% Once the collection of constituents from the large-$R$ jet is groomed, i.e. the most likely sources of soft radiation from PU and UE are eliminated, one can start working with those and start worrying about how to get physical-related properties from it, e.g. the mass.
+Once the collection of topo-clusters from the large-$R$ jet is groomed, i.e. cleaned from PU contamination through the trimming technique, it is possible to use them for the measure of physical related properties such as the jet mass, since the possible sources of soft radiation from PU and UE have been reduced.
+
+
+The \textit{calorimeter mass} or $m^{calo}$ is a widely used variable which takes as input the topo-cluster information. Given that each topo-cluster $i$ has a 3D information on the energy deposit, $E_i$, $\eta$ and $\phi$, the mass can be simply calculated from 4-vector properties:
+$$m^{calo}=\sqrt{\left(\sum_{i\in J}E_i\right)^2-\left(\sum_{i\in J}p_{T,i}\right)^2} $$
+where $J$ labels the Large-$R$ jet and assuming the topo-clusters as massless.
+
+\subsubsection{Track Mass}
+\label{sec:tracks}
+% This section briefly presents the tracks and how they are related to the properties of the large-$R$ jets.
+This section briefly presents the tracks and their relation with the large-$R$ jet's properties.
+% There are significant advantages of tracks and why they are interesting and possible candidate for precise mass reconstruction and a big disadvantage.
+There are significant advantages and few disadvantages of their usage for precise jet mass reconstruction, which are inherited both from the detector experimental properties and from the underlying physical processes. 
+
+First of all the performance of angular separation at low $\pt$ is intrinsically better for tracks than the calorimeter one.
+The second main advantage is that tracks can be associated with the primary vertex, thus simply excluding those from PU or other beam-induced soft radiation background (this is not the case for the UE).
+
+The requirement made on tracks to achieve optimal performance are grouped into two categories, the quality of the track, i.e. if it was fully reconstructed from the detector and separated from others with no ambiguities, and the association conditions with the primary vertex; further details are given in the appendix.
+
+Given the set of tracks which pass this selection, the mass $m^{track}$ is calculated summing up the 4-momenta of those tracks which are ghost associated to the groomed jet.
+
+% The main, big disadvantage is that the tracker system is completely blind to the neutral component of the jet, which, as said, amounts to c.a. a third of the total. As seen in Figure \ref{fig:trackandcalo}, the track mass (red distribution) is not only shifted towards lower values than the calorimeter mass (green distribution), but its width also degrades. 
+
+Apart from this benefits which derive from the tracker system, there is also an important disadvantage which comes from the underlying physics: it is completely blind to the electrically neutral component (mostly $\pi^0$) of the jet. As seen in Figure \ref{fig:trackandcalo}, the track mass (red distribution) is not only shifted towards lower values than the calorimeter mass (green distribution), but its width also degrades. 
+
+\begin{figure}[!ht]
+  \centering
+      \includegraphics[width=0.7\textwidth]{jet_part/trackandcalo.png}
+  \caption[Mass distribution for boosted $W/Z$]{Mass distribution boosted $W/Z$: in green the $m^{calo}$ and in red the $m^{track}$. }
+  \label{fig:trackandcalo}
+\end{figure}
+
+Tracks could be used either for independent mass reconstruction (and in this section is shown how this should not be done), or, most importantly, as an additional information to the calorimeter measurement.
+
+\subsubsection{InterQuantile-Range}
+The general idea of Figure of Merit (FoM) is given in the Appendix; here the InterQuantile range is described since used in this note and identical to the one used in the conference BOOST 2016.
+The InterQuantile range (IQnR) is here defined as it corresponds to a sigma of a ``perfect'' Gaussian distribution: $q84\%-q16\%$ where $q84\%$ is the 84$^{th}$ percentile and $q16\%$ is the 16$^{th}$, not to be confused with the InterQua\textbf{r}tile Range (IQR) which is the $q75\%-q25\%$ and does not correspond to the sigma. The final descriptor is then divided by the Median ($\iqr$). It provides stability and high sensitivity to left-hand-side and right-hand-side tails.
+% The way in which we look at the mass FoM to determine is half of the 68\% of the InterQuantile range (IQnR) (here defined such as it corresponds to a sigma of a ``perfect'' Gaussian distribution: $q84\%-q16\%$ where $q84\%$ is the 84$^{th}$ percentile and $q16\%$ is the 16$^{th}$, not to be confused with the InterQua\textbf{r}tile Range (IQR) which is the $q75\%-q25\%$ and does not correspond to the sigma) divided by the Median ($\iqr$). It provides stability and high sensitivity to left-hand-side and right-hand-side tails.
+
+% Another important FoM, used in literature and in this note, is the response distribution: given the reconstructed mass (calorimeter, track etc.) one can compare it to its $truth$ mass ($m^{truth}$), computed from the particle at MC level before the interaction with the detector:
+The IQnR is then applied to the response distribution Figure of Merit: given the reconstructed mass (calorimeter, track etc.) one can compare it to its $truth$ mass ($m^{truth}$), computed from the particle at MC level before the interaction with the detector:
+
+$$R_m=\frac{m^{reco}}{m^{truth}}$$
+
+Standard descriptor of the FoM e.g. in \cite{art35} and here is the IQnR of the $R_m$.
+  
+  
+In Figure \ref{fig:iqrbin} a mass response for a single range of transverse momentum is shown, for the calorimeter mass. On the plot the contours of a standard deviation and of $q16\%$ and $q84\%$ are drawn with dashed and solid lines, respectively, showing the difference induced by the tail. This sort of plot is the key when looking quantitatively to the observable performance and can be found in the Appendix for each of the process studied in every $\pt$ range considered. 
+% In this chapter will be shown, however, the quantity which describes this FOM, the IQnR, as a function of $\pt$, in order to get an understanding of the behavior in the entire spectrum and assure the exclusion of local sub-optimalities.
+
+\begin{figure}[!ht]
+  \centering
+      \includegraphics[width=0.7\textwidth]{jet_part/8ResponsePTJ_h_JetRatio_mJ05CALO.pdf}
+  \caption[$\mcal$ response single $\pt$ bin]{Calorimeter mass response plot for boosted $W/Z$. One the plot, right, are shown: the number of entries, the mean and the width of the fit to the Gaussian core, the integral from 0 to $\mu-\sigma$ and the one from $\mu+\sigma$ to $+\infty$, the values $\iqr$ and $\sigma/\mu$. On the distribution the dashed vertical lines represent the points $\mu-\sigma$ and $\mu+\sigma$ and the solid lines represent the $q16\%$ and $q84\%$. These lines also explicitly show the asymmetry between the left-hand-side flank, in general more pronounced, and the right-hand-side one}
+  \label{fig:iqrbin}
+\end{figure}
+
+\subsection{Track-Assisted Mass ($\mta$)}
+The track-assisted mass, $\mta$, was one of the first attempts to combine the information form the tracker system and from the calorimeter. It is defined as $\mta=\frac{p_T^{calo}}{p_T^{track}}\times m^{track}$, where the $p_T^{track}$ and the $m^{track}$ are calculated from the tracks which are associated to the large-radius jet, adding up their 4-momenta (hence exploiting the superior angular resolution of the tracker system); the $p_T^{calo}$ is the transverse momentum as measured from the calorimeter system. The ratio $p_T^{calo}/p_T^{track}$ restores the fraction of the missing neutral component in the $m^{track}$.
+The $\mta$ has a better performance on the reconstruction of boosted objects such as $W/Z$ in the extreme kinematic regime ($\sim $ 1 TeV) and above in the transverse momentum of the decaying electroweak object. Another advantage of this observable shows up as it comes to the systematic uncertainties: in particular jet mass scale and jet mass resolution uncertainty on $\mta$ can be estimated by propagating the track reconstruction uncertainties and calorimeter-jet $\pt$ uncertainties through the definition of the variable given above. The tracking uncertainties are smaller for $\mta$ rather than $\mcal$ because a larger extent of the uncertainty cancels in the ratio $m^{track}/p_T^{track}$.
+Apart all of this advantages, the track-assisted mass shows its limits when it comes to intermediate transverse momentum regimes and below ($\pt < 1 $ TeV) in $W/Z$ and for Higgs and top quarks throughout the whole kinematic space.
+% The track-assisted mass, $\mta$, was one of the first attempts to combine the information form the tracker system and from the calorimeter. 
+% The track mass is missing the neutral component, i.e. each measurement is missing the fraction $\frac{neutral+charged}{charged}$, but it has very good angular resolution but $\pt$ resolution degrades linearly with the transverse momentum. The calorimeter mass, on the other hand, has the limitation of the angular resolution of the topo-clusters but relative energy resolution increases at higher energies. The missing neutral fraction from the tracker system could be corrected on a jet-by-jet basis taking advantage of the two detector sub-system optimalities: this leads to the definition of the \textit{track-assisted mass} ($m^{TA}$):
+% \begin{equation}
+ % m^{TA}=\frac{p_T^{calo}}{p_T^{track}}\times m^{track}
+% \end{equation}
+% The better resolution of the $\mta$ takes place at the scale of above $\sim1$ TeV of transverse momentum for $W/Z$, while the performance is suboptimal to the calorimeter mass for all the other samples considered.
+% Another advantage with respect to 
+Full description of this variable is given in the ATLAS CONF Note \cite{art35}.
+% The main limitation of the calorimeter mass comes from the angular resolution of the topo-clusters, which, for extreme kinematic regimes, start approaching each other at the point that they hit the granularity of the detector. The main advantage is that on the contrary the relative energy resolution increases at higher energies.
+
+% The tracks instead have a very good angular resolution, but $\pt$ relative resolution degrades linearly with the transverse momentum. 
+
+% One could then think about creating a variable which exploits the advantages of both and minimizes the disadvantages. As seen, the track mass is missing the neutral component, i.e. each measurement is missing the fraction $\frac{neutral+charged}{charged}$, but it could be corrected on a jet-by-jet basis: this leads to the definition of the \textit{track-assisted mass} ($m^{TA}$):
+% \begin{equation}
+%  m^{TA}=\frac{p_T^{calo}}{p_T^{track}}\times m^{track}
+% \end{equation}
+
+% It can be intuitively understood as follows: the term $m^{track}$ has the superior angular resolution, but misses the neutral component; the ratio $p_T^{calo}/p_T^{track}$, representing exactly the $(neutral+charged)/charged$ ratio, ``restores'' the correct value of the mass back to $charged+neutral$.
+% \begin{figure}[!ht]
+%   \centering
+%       \includegraphics[width=0.7\textwidth]{jet_part/mta/allbinptmta.png}
+%   \caption[$\mcal$ and $\mta$ mass responses]{Track-assisted mass response plot for boosted $W/Z$: in green the calorimeter mass, in red the track-assisted mass. On the right are shown properties of the fit to the Gaussian core; it can be seen than the width of the $\mta$ distribution is smaller, and the mean is slightly below the calorimeter mass.}
+%   \label{fig:mta1}
+% \end{figure}
+
+% From Figure \ref{fig:mta1} the comparison of the track-assisted mass and the calorimeter mass; the width of the distribution is smaller, making this observable a good candidate for usage.
+
+
+% \subsection{Advantages and Limitation of $\mta$}
+% The $\mta$ has a good handle on boosted $W/Z$, looking at all the transverse momentum spectrum for these results.
+
+% \begin{figure}[!ht]
+%   \centering
+%       \includegraphics[width=0.9\textwidth]{jet_part/uncert.png}
+%   \caption[Comparison of the uncertainties for $\mcal$ and $\mta$]{Comparison of the uncertainties for $\mcal$, on the left, and $\mta$, on the right the rise on the high jet $\pt$ is due to statistics. From the \cite{art35}.}
+%   \label{fig:uncert}
+% \end{figure}
+
+% Another big advantage which supports the use of the track-assisted mass is the relatively small uncertainties: in Figure \ref{fig:uncert} the comparison of $\mcal$ (left) and $\mta$ (right) fractional uncertainties on the JMS, shows how the tracking uncertainties are much smaller because of the ratio $m^{track}/p_T^{track}$. On the right plot the black line indicates the JMS fractional uncertainty for the $\mcal$, and is always above the $\mta$. Of course this introduces another argument in the development of new techniques, which is to look for a good balance between performance and small uncertainties: a perfect observable in terms of behavior which has very big uncertainties is not really useful.
+
+
+% When looking in the extreme kinematic regime, at very high $\pt$, as in the top plot in Figure \ref{fig:mta2}, the $\mta$ shows its real strength, achieving much smaller value of the IQnR.
+% However, there are some severe limitations which are worth noting, especially looking at the performance in different regions of transverse momentum: this is shown in the bottom plot of Figure \ref{fig:mta2}, where at a low $\pt$ it exhibits a much worse behavior.
+
+% \subsubsection{Performance in $W \to q'\bar{q}$ Decays}
+
+% \begin{figure}
+%     \centering
+%     \begin{subfigure}[b]{0.5\textwidth}
+% 	\centering
+%         \includegraphics[width=\textwidth]{jet_part/mta/highptmta.png}
+   
+% %         \label{fig:tiger}
+%     \end{subfigure}
+%     \begin{subfigure}[b]{0.5\textwidth}
+% 	\centering
+%         \includegraphics[width=\textwidth]{jet_part/mta/lowptmta.png}
+ 
+% %         \label{fig:gull}
+%     \end{subfigure}
+%     \caption[Mass response plots for the $\mta$]{Mass response plots for selected ranges of $\pt$: on the bottom, a ``low'' range, 500 GeV $<\pt<$ 700 GeV, on the top an high $\pt$, 1900 GeV $<\pt<$ 2100 GeV. A difference in performance can be clearly seen.} 
+%     \label{fig:mta2}
+% \end{figure}
+
+
+% The performance in all the bins of $\pt$ can be studied looking at Figure \ref{fig:mta3}; these plots have as horizontal axis the transverse momentum and as vertical one the value of the $\iqr$ calculated from the correspondingly response. For $W/Z$ jets, there is a crossing point around $\pt\sim$1 TeV, which can be understood as the point in which the two sub-jet present start merging (sub-jet multiplicity shown in Figure \ref{fig:multi} in Appendix).
+
+
+
+% \subsubsection{Performance in $t\to q'\bar{q}b$ Decays}
+
+% For top quarks the situation is much different: with respect to $W/Z$ jets, in fact, there are two main disparities: on one side, the mass of the top quark is much higher than the one of the electroweak bosons, hence making the separation $\Delta R=\frac{2m}{\pt}$ bigger; on the other side, the decay is not anymore two-prong (two-sub-jet-like) but rather a three-prong  (three-sub-jet-like) decay, one from the b-jet and the other two from the $W$ decay.
+% $\mta$ is here never performing better than $\mcal$, as can be seen e.g. in Figure \ref{fig:mta3}, right.
+
+
+% \begin{figure}[!ht]
+%   \centering
+%       \includegraphics[width=\textwidth]{jet_part/mtawandtop.png}
+%   \caption[$m^{calo}$ and $m^{TA}$ comparison for $W/Z$ jets and top jets]{The comparison between the performance of $m^{calo}$ and $m^{TA}$ for $W/Z$ jets (left) and top jets (right); on the x-axis the transverse momentum and on the y-axes the $\iqr$ of the mass distribution, from \cite{art35}. A better observable has lower values on the y-axis. }
+%   \label{fig:mta3}
+% \end{figure}
+
+% \subsubsection{Performance in $h\to b\bar{b}$ Decays}
+
+% For boosted Higgs the $\mcal$ outperforms the $\mta$ in the spectrum of transverse momentum. Although the decay is two-pronged, the mass of the Higgs is higher than the electroweak bosons, moreover another difference lays in light quarks initiated jets and heavy quarks initiated ones, like the b-quarks from Higgs decay.
+% % the b-jet poses an additional complication which comes from the branching ratio of B mesons to muons, which leave very little energy in the calorimeter system but additional tracks.
+
+% \begin{figure}[!ht]
+%   \centering
+%       \includegraphics[width=0.7\textwidth]{jet_part/mta/higgsmta.png}
+%   \caption[Performance of the $\mta$ with the boosted Higgs sample]{Performance of the $\mta$ with the boosted Higgs sample; the $\mta$ is the blue line, the $\mcomb$ will be described later in this chapter. From \cite{art39}. The FoM here is the resolution of the Response.}
+%   \label{fig:mta4}
+% \end{figure}
+
+
+
+\subsection{The Track-Assisted Sub-jet Mass ($\mtas$)}
+In this section the main outcome of the optimization of the large-radius jet mas reconstruction is presented: the \textit{track-assisted sub-jet mass} ($\mtas$).
+The main idea takes inspiration from the track-assisted mass: if one can use tracks to exploit the better angular resolution and correct the missing neutral component jet-by-jet, there is an additional information that can be used. The neutral fraction, in fact, varies stochastically not only per-jet basis, but even per-sub-jet basis, since the each quark follows a different parton showering and hadronization process.
+Correcting the missed neutral component per-sub-jet, it should perform better already at an intuitive level, as it accesses information from jet substructure.
+There are few question in the definition of this mass observable, whose answers are in the next section:
+\begin{itemize}
+  \item Regarding the inputs:
+  \begin{itemize}
+     \item How to select the set of tracks to be used?
+     \item Which kind of sub-jet should be used?
+  \end{itemize}
+  \item Regarding the procedure
+  \begin{itemize}
+  
+  \item How to associate the tracks to a sub-jet?
+  \item How to correct for the missed neutrals on a sub-jet basis?
+  \item How to add everything back together?
+ \end{itemize} 
+ 
+\end{itemize}
+
+Those details are given in the next subsection.
+
+
+\subsection{Observable Definition: Inputs}
+There are two inputs to the $\mtas$: tracks and sub-jets. The definition of the standard inputs are give here; alternative approaches are given in subsection \ref{sec:alternate}.
+
+\subsubsection{Tracks}
+Only the tracks that satisfy the quality criteria and primary vertex association, described in the appendix \ref{sec:tracks}, are used.
+The tracks are additionally required to be ghost associated to the sub-jets of the groomed jet; namely only the sub-jets which survived the trimming procedure and are described in the next subsection.
+Ghost association provides a clear correspondence of tracks to the sub-jets set and was therefore chosen and preferred to other kind of assignments.
+
+\subsubsection{Sub-jets}
+
+The choice of sub-jets must follow a simple requirement: of course we want to take those which most likely come from the hard-scattering. This means that the choice of taking them after grooming is strongly favored.
+
+As grooming technique used, the trimming was preferred as being the standard in ATLAS and the most flexible one for optimization studies.
+
+The standard version of the trimming uses the k$_t$ reclustering algorithm with radius of 0.2, with the transverse momentum ratio $f_{cut}$ at 5\%.
+
+As shown later, this is also the optimal configuration for sub-jets.
+
+\subsection{Observable Definition: Procedure}
+Having tracks and sub-jets now well defined, we can describe the recipe to produce the $\mtas$. For brevity we will call the sub-jets SJ in the formulae below. 
+
+As said, the tracks are the ones ghost-associated to the sub-jets; however, tracks which fall inside the area of the large-$R$ jet, but not inside the sub-jets area, are still much probably coming from the hard-scattering. They are then associated again to the closest sub-jets via $\Delta R$ association.
+
+Each sub-jet will have at this point some tracks associated via ghost-association and some other via $\Delta R$ (which are maximally 5\%). We call this set of tracks, a ``custom'' Track-Jet or TJ.
+
+At this point, the one-to-one correspondence is preserved (for each SJ there is one and only one TJ), and we can move on correcting the neutral fraction.
+
+Getting inspired from the formula $m^{TA}=p_T^{calo}/p_T^{track}\times m^{track}$, we would like to replicate this at sub-jet level, i.e.
+
+$$\mtas="\sum_{SJ}"\frac{p_T^{SJ}}{p_T^{TJ}}\times m^{TJ}$$
+
+Where the summation symbol between quotation mark symbolize that the sum must be intended at 4-vector level: since now we are working inside the sub-jets, in fact, we need to change the sub-jet's 4-vector itself and not only the mass. If we call $p_\mu^{TJ}$ the Lorentz vector of the track-jet, 
+
+$$p_\mu^{TJ} = \spvec{m^{TJ};p_T^{TJ};\eta^{TJ};\phi^{TJ}} \to p_\mu^{TA}=\spvec{m^{TJ}\times\frac{p_T^{SJ}}{p_T^{TJ}} ;p_T^{SJ};\eta^{TJ};\phi^{TJ}} $$
+ 
+where $p_\mu^{TA}$ is the track-assisted sub-jet's 4-vector. If we label $i$ the $i$-th track-jet of the $N$ ones present in the large-$R$ jet,
+
+$$ \mtas=\sqrt{\left(\sum_i^N p^{TA} \right)_\mu \left(\sum_i^N p^{TA} \right)^{_\mu}} $$
+
+\subsubsection{Observable Definition: TAS Procedure}
+\label{sec:tas}
+
+As it will be shown and already stated in the introduction, the TAS procedure is being utilized with the Energy Correlation Functions and the n-Subjettiness. The four-momentum scheme which was described above and which was adopted as standard for the production of the $\mtas$ observable historically and also because of higher versatility and feasibility of implementation cannot be applied for those variable. The variable of interest to be modified which enters the computation of the ECF and n-Subjettiness is in fact the momentum.
+This correction is now applied on single track rather than the whole track-jet and on the transverse momentum, not the mass.
+The TAS correction reads:
+
+$$p_\mu^{track} = \spvec{m^{track};p_T^{track};\eta^{track};\phi^{track}} \to p_\mu^{TA}=\spvec{m^{track} ;p_T^{track} \times\frac{p_T^{SJ}}{p_T^{TJ}};\eta^{track};\phi^{track}}$$
+
+The corection factor $\frac{p_T^{SJ}}{p_T^{TJ}}$ refers to the $\pt$ of the sub-jet in which the track is associated and the $\pt$ of the track-jet associated to it.
+This momentum correction was studied with previous versions of the $\mtas$ and the difference with the stardard approach was found to be negligible \cite{presentation}.
+
+As before, these four-momenta are then summed together to give this alternative definition:
+
+$$ \mtas=\sqrt{\left(\sum_i^M p^{TA} \right)_\mu \left(\sum_i^M p^{TA} \right)^{_\mu}} $$
+
+where now the sum refers from the first to the M-th tracks associated to the large-$R$ jet.
+
+\begin{figure}[!ht]
+  \centering
+      \includegraphics[width=0.6\textwidth]{jet_part/mtas/mtas.png}
+  \caption[Pictorial event display]{Pictorial event display showing the $\eta$ $\phi$ region of a large-$R$ anti-k$_t$ trimmed jet, (in blue the catchment area of the anti-k$_t$) showing the different k$_t$ sub-jets: they are highlighted in green, fuchsia and yellow. The associated track-jets (here indicated as arrows pointing the calorimeter area) are colored with the same color of the correspondent sub-jet. Some tracks associated with $\Delta R$ procedure can be seen in the fuchsia sub-jet. The transverse momenta and mass values are also shown for the sub-jets.}
+  \label{fig:mtas1}
+\end{figure}
+
+An important remark is that, in the case of a large-$R$ jet with only one sub-jet, the $\mtas$ has exactly the same definition of the $\mta$. This implies, since the angular separation of the decay product scales inversely with $\pt$, that the performance should approach the one of the $\mta$ at very high transverse momenta. However, the space for improvement is precisely in the low-intermediate $\pt$ regime.

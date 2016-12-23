@@ -1,0 +1,25 @@
+Information about the substructure of large-R jets can be used to discriminate between different event topologies. These are one, two and respectively three hard substructures (or prongs) inside the large-R jet. QCD jets are characterized by one hard substructure, jets originated by $W$ or $Z$ bosons feature two and Top quark jets feature three substructures (hadronic decay channels).
+
+The \textsc{Energy Correlation Functions} ECF(N,$\beta$) or N-point correlators, described in Reference \cite{bib:ECF}, explore the substructure of a jet using a sum over the constituents. The correlation between pairs and triples of constituents is considered by the product of their $p_{\mathrm{T}}$, multiplied by the angular weighting, which is defined by the product of the pairwise angular distances of the considered constituents. This angular part can be scaled against the momentum part via an exponent $\beta$. The default value for $\beta$ is 1, corresponding to angular and momentum parts being weighted equally.
+\begin{equation}
+\begin{aligned}
+ & \text{ECF1}  ={} \sum\limits_{constituents} p_{\mathrm{T}} \\ 
+ & \text{ECF(2,$\beta$)} ={} \sum\limits_{i=1}^n \sum\limits_{j=i+1}^n p_{\mathrm{T},i}p_{\mathrm{T},j}\Delta R_{ij}^{\,\beta} \\ 
+ & \text{(ECF(3,$\beta$)} ={} \sum\limits_{i=1}^n \sum\limits_{j=i+1}^n \sum\limits_{k=j+1}^n p_{\mathrm{T},i}p_{\mathrm{T},j}p_{\mathrm{T},k}(\Delta R_{ij} \Delta R_{ik} \Delta R_{jk})^{\,\beta}
+\end{aligned}
+\end{equation}\label{eq:ECF}
+The ECF(N) variables can be expanded straightforwardly to larger values of N by considering this definition.
+With this, ECF(2) uses pairwise correlation and is sensitive to two-prong structures, whereas ECF3 relies on triple-wise correlations to identify three-prong structures. ECF(1) corresponds to the $p_{\mathrm{T}}$ of the whole jet by a summation over the constituents $p_{\mathrm{T}}$, thereby serving as normalization to minimize the energy scale dependence.
+
+The ECF(N) variable tends to very small values for collinear or soft configurations of $N$ constituents and is defined to be zero for jets with less than $N$ constituents. For ECF(2), only pairs of constituents that are angular separated but not soft result in sum terms that are non-negligible, which directly leads to the picture of two hard substructures inside the jet. A similar conclusion can be made for ECF(3) and three hard substructures. 
+Resulting from this, a jet with $N$ or more hard substructures features a high ECFN value while a jet with fewer than $N$ substructures has a lower ECF(N) value. Consequently, one can define ratios of Energy Correlation Functions. Two of them, called C2 and D2 are found to be very powerful to distinguish between one- and two-prong like jets, see e.g. Reference \cite{bib:power_counting}. 
+\begin{equation}
+\begin{aligned}
+ & \text{C2} ={} \frac{\text{ECF(3)}\cdot\text{ECF(1)}}{\text{ECF(2)}^2} \\ 
+ & \text{D2} ={} \frac{\text{ECF(3)}\cdot\text{ECF(1)}^3}{\text{ECF(2)}^3}
+\end{aligned}
+\end{equation}\label{eq:C2D2} 
+E.g. a jet originated from a $W$ boson features a small ECF(3) but a high ECF(2) value resulting in small C2/D2, corresponding to a high agreement with the two-prong hypothesis. QCD jets feature a very small ECF(3) and a small ECF(2) value. This results, considering the power of ECF(2) in the definitions, in a higher C2/D2 value as for a $W$ boson jet. 
+These variables are IRC-safe for $\beta > 0$ and theoretically very well understood, see Reference \cite{bib:analytic_ECF}. D2 was found to perform slightly better for tagging $W$ boson jets as C2 in Reference \cite{bib:w_tagging}, most notably due to a more $p_{\mathrm{T}}$ robust cut value and a somewhat higher background rejection. 
+
+% Stress default constituents are calorimeter clusters
