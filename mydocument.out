@@ -1,72 +1,69 @@
 \BOOKMARK [1][-]{section.1}{Introduction}{}% 1
-\BOOKMARK [1][-]{section.2}{Object Definition}{}% 2
-\BOOKMARK [2][-]{subsection.2.1}{Large-radius jet mass definitions}{section.2}% 3
-\BOOKMARK [3][-]{subsubsection.2.1.1}{Substructure: Grooming Techniques}{subsection.2.1}% 4
-\BOOKMARK [3][-]{subsubsection.2.1.2}{Calorimeter Mass}{subsection.2.1}% 5
-\BOOKMARK [3][-]{subsubsection.2.1.3}{Track Mass}{subsection.2.1}% 6
-\BOOKMARK [3][-]{subsubsection.2.1.4}{InterQuantile-Range}{subsection.2.1}% 7
-\BOOKMARK [2][-]{subsection.2.2}{Track-Assisted Mass \(mTA\)}{section.2}% 8
-\BOOKMARK [2][-]{subsection.2.3}{The Track-Assisted Sub-jet Mass \(mTAS\)}{section.2}% 9
-\BOOKMARK [2][-]{subsection.2.4}{Observable Definition: Inputs}{section.2}% 10
-\BOOKMARK [3][-]{subsubsection.2.4.1}{Tracks}{subsection.2.4}% 11
-\BOOKMARK [3][-]{subsubsection.2.4.2}{Sub-jets}{subsection.2.4}% 12
-\BOOKMARK [2][-]{subsection.2.5}{Observable Definition: Procedure}{section.2}% 13
-\BOOKMARK [3][-]{subsubsection.2.5.1}{Observable Definition: TAS Procedure}{subsection.2.5}% 14
-\BOOKMARK [2][-]{subsection.2.6}{Energy Correlation Functions}{section.2}% 15
-\BOOKMARK [2][-]{subsection.2.7}{n-Subjettiness}{section.2}% 16
-\BOOKMARK [2][-]{subsection.2.8}{Receiver Operator Characteristics}{section.2}% 17
-\BOOKMARK [1][-]{section.3}{Track-assisted subjet mass}{}% 18
-\BOOKMARK [2][-]{subsection.3.1}{Performance in W q'barq Decays}{section.3}% 19
-\BOOKMARK [2][-]{subsection.3.2}{Performance in tq'barqb Decays}{section.3}% 20
-\BOOKMARK [2][-]{subsection.3.3}{Performance in hbbarb Decays}{section.3}% 21
-\BOOKMARK [2][-]{subsection.3.4}{Performance in QCD Multijet Events}{section.3}% 22
-\BOOKMARK [2][-]{subsection.3.5}{Performance in Massive q'barq Decays with m=mt}{section.3}% 23
-\BOOKMARK [2][-]{subsection.3.6}{Other Stability Quantifiers}{section.3}% 24
-\BOOKMARK [2][-]{subsection.3.7}{Potential Improvements from Sub-jet Calibration}{section.3}% 25
-\BOOKMARK [3][-]{subsubsection.3.7.1}{Perfect Calibration}{subsection.3.7}% 26
-\BOOKMARK [3][-]{subsubsection.3.7.2}{Simple Sub-jet Calibration}{subsection.3.7}% 27
-\BOOKMARK [1][-]{section.4}{Limitation of mTAS from tracking}{}% 28
-\BOOKMARK [2][-]{subsection.4.1}{Alternative Observable Definitions}{section.4}% 29
-\BOOKMARK [1][-]{section.5}{Combining the mass observables}{}% 30
-\BOOKMARK [2][-]{subsection.5.1}{Combination mTA-mcalo}{section.5}% 31
-\BOOKMARK [2][-]{subsection.5.2}{Combination mTAS-mcalo}{section.5}% 32
-\BOOKMARK [3][-]{subsubsection.5.2.1}{Procedure}{subsection.5.2}% 33
-\BOOKMARK [2][-]{subsection.5.3}{Performance in W q'barq Decays}{section.5}% 34
-\BOOKMARK [2][-]{subsection.5.4}{Performance in tq'barqb Decays}{section.5}% 35
-\BOOKMARK [2][-]{subsection.5.5}{Performance in hbbarb Decays}{section.5}% 36
-\BOOKMARK [1][-]{section.6}{Uncertainties on observables with sub-jet-assisted tracks}{}% 37
-\BOOKMARK [1][-]{section.7}{Energy Correlation Functions and n-Subjettiness}{}% 38
-\BOOKMARK [2][-]{subsection.7.1}{Event weighting and Mass-Cut}{section.7}% 39
-\BOOKMARK [2][-]{subsection.7.2}{Track Selection}{section.7}% 40
-\BOOKMARK [2][-]{subsection.7.3}{Performance with default }{section.7}% 41
-\BOOKMARK [3][-]{subsubsection.7.3.1}{Performance for W boson tagging}{subsection.7.3}% 42
-\BOOKMARK [3][-]{subsubsection.7.3.2}{Un-assisted tracks and TAS at very high pT}{subsection.7.3}% 43
-\BOOKMARK [3][-]{subsubsection.7.3.3}{Correlation with pT}{subsection.7.3}% 44
-\BOOKMARK [3][-]{subsubsection.7.3.4}{Performance for Higgs boson tagging}{subsection.7.3}% 45
-\BOOKMARK [3][-]{subsubsection.7.3.5}{Performance for Top quark tagging}{subsection.7.3}% 46
-\BOOKMARK [2][-]{subsection.7.4}{Optimisation of }{section.7}% 47
-\BOOKMARK [3][-]{subsubsection.7.4.1}{Optimisation for W boson jets}{subsection.7.4}% 48
-\BOOKMARK [3][-]{subsubsection.7.4.2}{Optimisation for Higgs boson jets}{subsection.7.4}% 49
-\BOOKMARK [3][-]{subsubsection.7.4.3}{Optimisation for Top quark jets}{subsection.7.4}% 50
-\BOOKMARK [1][-]{section.8}{Conclusions \046 Outlook}{}% 51
-\BOOKMARK [2][-]{subsection.8.1}{Jet mass observables}{section.8}% 52
-\BOOKMARK [2][-]{subsection.8.2}{Energy Correlation Functions and n-Subjettiness}{section.8}% 53
-\BOOKMARK [0][-]{part*.42}{Appendix}{}% 54
-\BOOKMARK [1][-]{appendix.A}{Monte Carlo Samples}{part*.42}% 55
-\BOOKMARK [1][-]{appendix.B}{Trimming}{part*.42}% 56
-\BOOKMARK [1][-]{appendix.C}{Tracks details}{part*.42}% 57
-\BOOKMARK [1][-]{appendix.D}{Alternative Performance Figure of Merit \(FoM\)}{part*.42}% 58
-\BOOKMARK [2][-]{subsection.D.1}{Gaussian Fit}{appendix.D}% 59
-\BOOKMARK [1][-]{appendix.E}{mTAS distributions, boosted W/Z}{part*.42}% 60
-\BOOKMARK [1][-]{appendix.F}{mTAS distributions, boosted tops}{part*.42}% 61
-\BOOKMARK [1][-]{appendix.G}{mTAS distributions, boosted higgs}{part*.42}% 62
-\BOOKMARK [1][-]{appendix.H}{mcombTAS response distributions, boosted W/Z}{part*.42}% 63
-\BOOKMARK [1][-]{appendix.I}{mcombTAS response distributions, boosted tops}{part*.42}% 64
-\BOOKMARK [1][-]{appendix.J}{mcombTAS response distributions, Higgs}{part*.42}% 65
-\BOOKMARK [1][-]{appendix.K}{W boson Tagging}{part*.42}% 66
-\BOOKMARK [1][-]{appendix.L}{Higgs Boson Tagging}{part*.42}% 67
-\BOOKMARK [1][-]{appendix.M}{Top Quark Tagging}{part*.42}% 68
-\BOOKMARK [1][-]{appendix.N}{W Distributions}{part*.42}% 69
-\BOOKMARK [1][-]{appendix.O}{Higgs Distributions}{part*.42}% 70
-\BOOKMARK [1][-]{appendix.P}{Top Distributions}{part*.42}% 71
-\BOOKMARK [0][-]{part*.334}{Auxiliary material}{}% 72
+\BOOKMARK [1][-]{section.2}{MC Samples and event weighting}{}% 2
+\BOOKMARK [1][-]{section.3}{Object Definition}{}% 3
+\BOOKMARK [2][-]{subsection.3.1}{Standard Large-Radius jet}{section.3}% 4
+\BOOKMARK [3][-]{subsubsection.3.1.1}{Grooming and Selection}{subsection.3.1}% 5
+\BOOKMARK [3][-]{subsubsection.3.1.2}{Calorimeter Mass}{subsection.3.1}% 6
+\BOOKMARK [3][-]{subsubsection.3.1.3}{Track Mass}{subsection.3.1}% 7
+\BOOKMARK [3][-]{subsubsection.3.1.4}{Track-Assisted Mass \(mTA\)}{subsection.3.1}% 8
+\BOOKMARK [2][-]{subsection.3.2}{The Track-Assisted Sub-jet Mass \(mTAS\)}{section.3}% 9
+\BOOKMARK [3][-]{subsubsection.3.2.1}{Observable Definition: Inputs}{subsection.3.2}% 10
+\BOOKMARK [3][-]{subsubsection.3.2.2}{Observable Definition: Procedure}{subsection.3.2}% 11
+\BOOKMARK [2][-]{subsection.3.3}{The Combined Mass}{section.3}% 12
+\BOOKMARK [3][-]{subsubsection.3.3.1}{Combination mTA-mcalo}{subsection.3.3}% 13
+\BOOKMARK [3][-]{subsubsection.3.3.2}{Combination mTAS-mcalo}{subsection.3.3}% 14
+\BOOKMARK [2][-]{subsection.3.4}{Jet Substructure observables with assisted tracks}{section.3}% 15
+\BOOKMARK [3][-]{subsubsection.3.4.1}{Energy Correlation Functions}{subsection.3.4}% 16
+\BOOKMARK [3][-]{subsubsection.3.4.2}{n-Subjettiness}{subsection.3.4}% 17
+\BOOKMARK [1][-]{section.4}{Figures of Merit for Performance Studies}{}% 18
+\BOOKMARK [2][-]{subsection.4.1}{For jet mass}{section.4}% 19
+\BOOKMARK [2][-]{subsection.4.2}{ROC Cursves and prior mass cut}{section.4}% 20
+\BOOKMARK [1][-]{section.5}{Performance of Track-assisted subjet mass}{}% 21
+\BOOKMARK [2][-]{subsection.5.1}{Performance in W q'barq Decays}{section.5}% 22
+\BOOKMARK [2][-]{subsection.5.2}{Performance in hbbarb Decays}{section.5}% 23
+\BOOKMARK [2][-]{subsection.5.3}{Performance in tq'barqb Decays}{section.5}% 24
+\BOOKMARK [2][-]{subsection.5.4}{Performance in QCD Multijet Events}{section.5}% 25
+\BOOKMARK [2][-]{subsection.5.5}{Performance in Massive q'barq Decays with m=mt}{section.5}% 26
+\BOOKMARK [2][-]{subsection.5.6}{Stability of Mean of Response and Left-Hand-Side Integral}{section.5}% 27
+\BOOKMARK [2][-]{subsection.5.7}{Potential Improvements from Sub-jet Calibration}{section.5}% 28
+\BOOKMARK [3][-]{subsubsection.5.7.1}{Simple Sub-jet Calibration}{subsection.5.7}% 29
+\BOOKMARK [2][-]{subsection.5.8}{Limitation of mTAS from tracking}{section.5}% 30
+\BOOKMARK [2][-]{subsection.5.9}{Performance with Alternate Inputs to the mTAS}{section.5}% 31
+\BOOKMARK [1][-]{section.6}{Performance of Combined Calorimeter and Track-Assisted Sub-Jet Mass}{}% 32
+\BOOKMARK [2][-]{subsection.6.1}{Performance in W q'barq Decays}{section.6}% 33
+\BOOKMARK [2][-]{subsection.6.2}{Performance in hbbarb Decays}{section.6}% 34
+\BOOKMARK [2][-]{subsection.6.3}{Performance in tq'barqb Decays}{section.6}% 35
+\BOOKMARK [1][-]{section.7}{Performance of Jet Substructure observables with \(assisted\) tracks}{}% 36
+\BOOKMARK [2][-]{subsection.7.1}{Event weighting and Mass-Cut}{section.7}% 37
+\BOOKMARK [2][-]{subsection.7.2}{Track Selection}{section.7}% 38
+\BOOKMARK [2][-]{subsection.7.3}{Performance with default }{section.7}% 39
+\BOOKMARK [3][-]{subsubsection.7.3.1}{Performance for W boson tagging}{subsection.7.3}% 40
+\BOOKMARK [3][-]{subsubsection.7.3.2}{Un-assisted tracks and TAS at very high pT}{subsection.7.3}% 41
+\BOOKMARK [3][-]{subsubsection.7.3.3}{Correlation with pT}{subsection.7.3}% 42
+\BOOKMARK [3][-]{subsubsection.7.3.4}{Performance for Higgs boson tagging}{subsection.7.3}% 43
+\BOOKMARK [3][-]{subsubsection.7.3.5}{Performance for Top quark tagging}{subsection.7.3}% 44
+\BOOKMARK [2][-]{subsection.7.4}{Optimisation of }{section.7}% 45
+\BOOKMARK [3][-]{subsubsection.7.4.1}{Optimisation for W boson jets}{subsection.7.4}% 46
+\BOOKMARK [3][-]{subsubsection.7.4.2}{Optimisation for Higgs boson jets}{subsection.7.4}% 47
+\BOOKMARK [3][-]{subsubsection.7.4.3}{Optimisation for Top quark jets}{subsection.7.4}% 48
+\BOOKMARK [1][-]{section.8}{Uncertainties on observables with sub-jet-assisted tracks}{}% 49
+\BOOKMARK [1][-]{section.9}{Conclusions \046 Outlook}{}% 50
+\BOOKMARK [0][-]{part*.47}{Appendix}{}% 51
+\BOOKMARK [1][-]{appendix.A}{Monte Carlo Samples}{part*.47}% 52
+\BOOKMARK [1][-]{appendix.B}{Trimming}{part*.47}% 53
+\BOOKMARK [1][-]{appendix.C}{Tracks details}{part*.47}% 54
+\BOOKMARK [1][-]{appendix.D}{Alternative Performance Figure of Merit \(FoM\)}{part*.47}% 55
+\BOOKMARK [2][-]{subsection.D.1}{Gaussian Fit}{appendix.D}% 56
+\BOOKMARK [1][-]{appendix.E}{mTAS distributions, boosted W/Z}{part*.47}% 57
+\BOOKMARK [1][-]{appendix.F}{mTAS distributions, boosted tops}{part*.47}% 58
+\BOOKMARK [1][-]{appendix.G}{mTAS distributions, boosted higgs}{part*.47}% 59
+\BOOKMARK [1][-]{appendix.H}{mcombTAS response distributions, boosted W/Z}{part*.47}% 60
+\BOOKMARK [1][-]{appendix.I}{mcombTAS response distributions, boosted tops}{part*.47}% 61
+\BOOKMARK [1][-]{appendix.J}{mcombTAS response distributions, Higgs}{part*.47}% 62
+\BOOKMARK [1][-]{appendix.K}{W boson Tagging}{part*.47}% 63
+\BOOKMARK [1][-]{appendix.L}{Higgs Boson Tagging}{part*.47}% 64
+\BOOKMARK [1][-]{appendix.M}{Top Quark Tagging}{part*.47}% 65
+\BOOKMARK [1][-]{appendix.N}{W Distributions}{part*.47}% 66
+\BOOKMARK [1][-]{appendix.O}{Higgs Distributions}{part*.47}% 67
+\BOOKMARK [1][-]{appendix.P}{Top Distributions}{part*.47}% 68
+\BOOKMARK [0][-]{part*.339}{Auxiliary material}{}% 69

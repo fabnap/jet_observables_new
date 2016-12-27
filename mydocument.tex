@@ -235,39 +235,31 @@ The note ends with conclusions for the jet observables using subjet-assisted tra
 % % \end{center}
 % \end{table}
 
-%-------------------------------------------------------------------------------
-\section{Object Definition}
-\label{sec:objdef}
-%-------------------------------------------------------------------------------
-
-This section gives an overview of the objects used for the subjet-assisted variables, which are the large-radius jet mass, the Energy Correlation Functions and the n-Subjettiness, as they are used within ATLAS, the next section will give the details of the modified approach of the subjet-assisted techniques.
-
 
 \input{fab1.tex}
 
+\subsection{Jet Substructure observables with assisted tracks}
 
-\subsection{Energy Correlation Functions}\label{subsec:ECF}
+\subsubsection{Energy Correlation Functions}\label{subsec:ECF}
 \input{sascha_input/ECF}
 
-\subsection{n-Subjettiness}\label{subsec:nSub}
+\subsubsection{n-Subjettiness}\label{subsec:nSub}
 \input{sascha_input/nSub}
 
-\subsection{Receiver Operator Characteristics}\label{sec:ROC}
-The separation power of discrimination variables can be studied quite intuitively by comparing the signal and background distributions of a certain variable. Another used figure of merit for the performance, especially for comparisons of different variables, is to use \textsc{Receiver Operator Characteristics} (ROCs) which show the achieved background rejection for different values of signal efficiency (signal fraction left after performing a cut). 
-Each point is calculated from the underlying signal and background distributions by integrating the background distribution from zero \footnote[1]{If the signal distribution lies at lower values as the background.} to the point where the desired signal fraction is achieved. The fraction of background events contained in this region are kept when cutting at this signal efficiency, hence the inverse of this fraction, $\frac{1}{\epsilon_{background}}$ is an estimate for the background rejection. The lower the fraction of background events in the region, the better is the achieved exclusion. Accordingly, a good discrimination variable is represented by a ROC with preferably high values of background rejection up to high signal efficiencies.
+\section{Figures of Merit for Performance Studies}\label{sec:FoM}
+\input{figureofmerit.tex}
 
-
-
+\newpage
 %-------------------------------------------------------------------------------
-\section{Track-assisted subjet mass}
+\section{Performance of Track-assisted subjet mass}
 \label{sec:mtas}
 %-------------------------------------------------------------------------------
 The track-assisted subjet mass takes inspiration from the simpler development which is already implemented within ATLAS, the track-assisted mass which is described briefly below for completeness.
 
 \input{fab2.tex}
-
+\newpage
 %-------------------------------------------------------------------------------
-\section{Energy Correlation Functions and n-Subjettiness}\label{subsec:ta_adapt}
+\section{Performance of Jet Substructure observables with (assisted) tracks}\label{subsec:ta_adapt}
 \input{sascha_input/technics}
 
 \subsection{Track Selection}
@@ -282,13 +274,36 @@ The track-assisted subjet mass takes inspiration from the simpler development wh
 \label{sec:ECFnS}
 %----------------------------------
 
+\newpage
+\section{Uncertainties on observables with sub-jet-assisted tracks}
+This chapter gives a brief overview of the uncertainties on the track-assisted (sub-jet) mass variable. 
+For $\mta$ the uncertainties are smaller than calorimeter-based jet mass variables because of the way it is constructed, $\mta=m^{trk}\times p_T^{calo}/p_T^{trk}$: the ratio $m^{trk}/p_T^{trk}$ causes a cancellation of the tracking uncertainties to a large extent, which are smaller than $\mcal$. The remaining term $p_T^{calo}$ is the additional one where uncertainties on this variable need to be evaluated with special care.
+
+\begin{figure}[!ht]
+  \centering
+      \includegraphics[width=0.9\textwidth]{jet_part/uncert.png}
+  \caption[Comparison of the uncertainties for $\mcal$ and $\mta$]{Comparison of the uncertainties for $\mcal$, on the left, and $\mta$, on the right the rise on the high jet $\pt$ is due to statistics. From the \cite{art35}.}
+  \label{fig:uncert}
+\end{figure}
 
 
+For what concerns the $\mtas$, the tracking uncertainties are expected to be identical to the $\mta$, because of the identical use of tracks in both variables, as also discussed in the BOOST Conference Note \cite{art35}.
+The only significant difference in this regard of $\mta$ with respect to $\mtas$ is the $p_T^{jet}$ instead of the $p_T^{subjet}$: the uncertainties in the first one are calculated in-situ using $p_T$ balance methods, and they are generally well-behaved; for the second one, the uncertainties are also expected to lay in the same order of magnitude. In Figure \ref{fig:uncert} the comparison of the uncertainties for the $\mcal$ on the left and $\mta$ on the right shows the smaller fractional JMS uncertainties in the use of the track-assisted method.
+
+The path to bring $\mtas$ ready to usage needs of course to evaluate the uncertainties on the  $p_T^{subjet}$ which can be provided with the R-Scan procedure which includes the anti-k$_t$ sub-jets of radius of 0.2; those were already showed to have a similar performance of the k$_t$ sub-jets used as standard.
+
+The $\mtas$ moreover is expected to have little to none benefit from the calibration procedure which could be provided from the R-Scan as well, as already shown and discussed in the previous chapter. 
+
+
+
+
+
+\newpage
 %-------------------------------------------------------------------------------
 \section{Conclusions \& Outlook}
 \label{sec:conclusions}
 %----------------------------------
-\subsection{Jet mass observables}
+% \subsection{Jet mass observables}
 The $\mtas$ variable was developed for the large-$R$ jet mass; it combines the information of the tracker- and calorimeter-system to achieve an higher precision in the jet mass reconstruction, correcting the missed neutral fraction which is absent in the tracker but not in the calorimeter.
 With respect to the $\mta$, it applies this correction at sub-jet by sub-jet level and not at jet by jet level, therefore providing a more accurate reconstruction. 
 It was shown in Monte Carlo simulation to be a very good observable confronting quantitatively with the other definitions which are either standard or in preparation, $\mcal$, $\mta$ and $\mcomb$.
@@ -316,7 +331,7 @@ For the very conclusion, both the variables constructed in the work of this thes
 
 % In the more complex scenario, the uncertainties could be derived for the sub-jets R=0.2 reclustered with anti-k$_{t}$.
 %------------------------------------------------------------------------------
-\subsection{Energy Correlation Functions and n-Subjettiness}
+% \subsection{Energy Correlation Functions and n-Subjettiness}
 
 ***here sascha conclusions***
 
