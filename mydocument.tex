@@ -84,6 +84,12 @@
 % Add you own definitions here (file mydocument-defs.sty).
 \usepackage{mydocument-defs}
 \usepackage{rotating}
+\usepackage{float}
+\usepackage{placeins}
+
+\definecolor{Gray}{gray}{0.95}
+\definecolor{Gray2}{gray}{0.98}
+\definecolor{Red}{HTML}{E55451}
 
 %-------------------------------------------------------------------------------
 % Generic document information
@@ -119,7 +125,7 @@ The distribution of energy inside a jet contains information about the initiatin
 particle such as a top quark, Higgs boson or W/Z bosons is produced with significant Lorentz boost and decays into
 quarks, the entire hadronic decay may be captured inside a single jet. The mass of such jets (jet mass)
 is one of the most powerful tools for distinguishing massive particle decays from the continuum multijet
-background; the Energy Correlation Functions and n-Subjettiness C2, D2, $\tau_{21}$ and $\tau_{32}$ provide an ad-hoc tool pupusely developed for the multijet background and constitue a fundamental part of many for boson taggers.
+background; the ratios of Energy Correlation Functions C2 and D2 (see Reference \cite{bib:ECF}) and n-Subjettiness $\tau_{21}$ and $\tau_{32}$ (see Reference \cite{bib:nsub}) provide an ad-hoc tool pupusely developed for the multijet background and constitue a fundamental part of many for boson taggers.
 This note documents the so-called subjet-assisted techniques with the ATLAS detector. 
 The track-assisted subjet mass $m^{TAS}$ definition is presented and confronted with the standard development in ATLAS, $m^{comb}$ and $m^{TA}$. 
 Energy Correlation Functions and n-Subjettiness with the modified subjet-assisted technique are presented and confronted with the standard one in ATLAS.
@@ -238,7 +244,9 @@ The note ends with conclusions for the jet observables using subjet-assisted tra
 
 \input{fab1.tex}
 
-\subsection{Jet Substructure observables with assisted tracks}
+\subsection{Jet Substructure Observables with (assisted) Tracks}\label{sec:tas_jss}
+
+\input{sascha_input/technics}
 
 \subsubsection{Energy Correlation Functions}\label{subsec:ECF}
 \input{sascha_input/ECF}
@@ -259,19 +267,17 @@ The track-assisted subjet mass takes inspiration from the simpler development wh
 \input{fab2.tex}
 \newpage
 %-------------------------------------------------------------------------------
-\section{Performance of Jet Substructure observables with (assisted) tracks}\label{subsec:ta_adapt}
-\input{sascha_input/technics}
-
-\subsection{Track Selection}
+\section{Performance of Jet Substructure Observables with (assisted) Tracks}\label{sec:def_beta}
+This section shows the performace of (assisted) tracks compared to clusters as input for the substructure observables C2/D2 and $\tau_{21}$ for $W$ and Higgs tagging as well as $\tau_{32}$ for Top tagging. For now, the angular weighting parameter $\beta$ is set to the default value of 1.
+\subsection{Effect of Track Selection}
 \input{sascha_input/TrackSelection}
 
 \subsection{Performance with default $\beta$}
 \input{sascha_input/results_beta1}
 
-\subsection{Optimisation of $\beta$}
+\section{Performance of Jet Substructure Observables with (assisted) Tracks and optimised $\beta$}\label{sec:beta_opt}
 \input{sascha_input/beta_opt}
 
-\label{sec:ECFnS}
 %----------------------------------
 
 \newpage
@@ -316,8 +322,6 @@ The $\mcombtas$ is the logical extension of the $\mtas$, which improves by const
 Weights for its construction can be in both cases either derived specifically for the sample considered, or constructed on average with the QCD sample, in this case getting a sub-optimal performance. 
 In all the cases studied, it has a better behavior than the $\mcomb$, $\mcal$ and $\mta$.
 
-For the very conclusion, both the variables constructed in the work of this thesis,$\mtas$ and $\mcombtas$, exhibit a better performance of their counterparts, $\mta$ and $\mcomb$, which are now ready to be use or in preparation within the ATLAS collaboration, and share the same advantages -and disadvantages. Further steps are necessary to get this observables to usage: calibration and uncertainties.
-
 % \subsubsection{Outlook}
 % The outlook of the $\mtas$ and $\mcombtas$ variables follows two main scenarios, concerning the calibration and uncertainties determination which are necessary to get this observables ready to be used. The procedure involved are already fully understood, since the the same was applied or is being applied for the $\mta$ and $\mcomb$.
 
@@ -333,7 +337,16 @@ For the very conclusion, both the variables constructed in the work of this thes
 %------------------------------------------------------------------------------
 % \subsection{Energy Correlation Functions and n-Subjettiness}
 
-***here sascha conclusions***
+The performance of the Energy Correlation Functions and n-Subjettiness observables was studied with tracks and subjet-assisted tracks (TAS) compared to the default calculation with calorimeter clusters. The assisting procedure for these observables is the same single-track scaling method used for $\mtas$. It was shown, that the better angular resolution of tracks can help to reduce the QCD background in boosted $W$, Higgs and Top tagging cases, especially for very high energies. Optimal results can be achieved by tuning the angular weighting to slightly higher values. In our study, a value of $\beta=1.7$ yield the highest background rejections in most of the cases. 
+
+Subjet-assisted tracks performed superior for lower and intermediate boosts. At very high energies, the assisting was shown to loose effect on the studied observables and tracks and TAS equally outperform the cluster based variables in terms of QCD rejection.
+
+For the three cases of $W$, Higgs and Top tagging, the optimal variables were identified and the $p_{\text{T}}$ behaviour of the cut-value for two different working points were studied. 
+
+%For the very conclusion, both the variables constructed in the work of this thesis, $\mtas$ and $\mcombtas$, exhibit a better performance of their counterparts, $\mta$ and $\mcomb$, which are now ready to be use or in preparation within the ATLAS collaboration, and share the same advantages -and disadvantages. Further steps are necessary to get this observables to usage: calibration and uncertainties.
+
+%%Sascha: Adding my stuff to this part if OK
+For the very conclusion, the variables constructed in the work of this study, $\mtas$ and $\mcombtas$, as well as the TAS and track based C2/D2/$\tau_{21}$/$\tau_{32}$, exhibit a better performance as their counterparts, $\mta$ and $\mcomb$, respectively JSS observables calculated from topo-clusters. The introduced observables are now ready to use or in preparation within the ATLAS collaboration, and share the same advantages -and disadvantages. Further steps are necessary to get this observables to usage: calibration (mass) and uncertainties (mass and further substructure observables).
 
 %-------------------------------------------------------------------------------
 \clearpage

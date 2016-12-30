@@ -283,6 +283,7 @@
 
 % Required packages
 \RequirePackage{graphicx}
+\usepackage[table]{xcolor}
 \RequirePackage{xcolor}
 \RequirePackage{babel}
 % hyperref is needed in many places, so include it here
