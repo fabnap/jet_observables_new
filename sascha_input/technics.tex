@@ -1,40 +1,9 @@
-Tracks and their angular resolution could not only improve the jet mass definition but also the performance of tagging variables such as the Energy Correlation Functions or n-Subjettiness. These variables are usually calculated with calorimeter clusters as input, studied here are tracks and assisted tracks as input in comparison with the default method using clusters. 
-In contrast to the $\mta$ variable introduced in Section \ref{subsec:mta}, not the mass but the $p_{\mathrm{T}}$ of each track is scaled, since C2, D2, $\tau_{21}$ and $\tau_{32}$ are calculated with the constituents $p_{\mathrm{T}}$.
 
-The concept of track assisting with the $p_{\mathrm{T}}$ ratio of the whole jet is without effect for the studied substructure variables. This can be understood from the definitions of the weighted $p_{\mathrm{T}}$ sums. If corrected with only one ratio, all tracks are scaled by the same factor $c$, which then can be put in front of the sum and cancels as soon as the ratios $\tau_{21}$ and $\tau_{32}$, respectively C2 and D2 are formed.
-\begin{equation}
-\begin{aligned}
- & \tau_N ={} \frac{1}{d_0}\sum_k p_{T,k} \; c \; min(\Delta R_{1,k},\Delta R_{2,k},...,\Delta R_{N,k})^{\beta} \\
- & \; \; \; \;  ={} \frac{c}{d_0}\sum_k p_{T,k}\:min(\Delta R_{1,k},\Delta R_{2,k},...,\Delta R_{N,k})^{\beta}
-\end{aligned}
-\end{equation}
-Track assisting with ghost association to subjets (TAS), see Section \ref{subsec:mtas} for $\mtas$ works with different scaling factors depending on the corresponding sub-jet $c_k$, which also affect ratios:
-\begin{equation}
-\tau_N = \frac{1}{d_0}\sum_k p_{T,k} \; c_k \; min(\Delta R_{1,k},\Delta R_{2,k},...,\Delta R_{N,k})^{\beta} 
-\end{equation}\label{eq:tas_ta}
-This leads to the following adaption of the TAS procedure:
-\begin{equation}
-\begin{pmatrix}
-                    m_{track} \\ p_{T,track} \\ \eta_{track} \\  \phi_{track}
-                    \end{pmatrix}       \rightarrow \begin{pmatrix}
-                    m_{track}  \\ p_{T,track}  \frac{p_{T,sub-jet}}{\sum\limits_{ga\:tracks}p_{T,track}} \\ \eta_{track} \\ \phi_{track}
-            
-            \end{pmatrix}  
-\end{equation}\label{eq:track_tas}
-Where the sum combines the $p_{\mathrm{T}}$ of all tracks that are associated to a given sub-jet. 
+Jet substructure observables are used to distinguish between different jet topologies, corresponding to signal and background events. $W$ and Higgs jets originate from two quarks, expected is a structure of two angular separated, hard energy depositions (two-prong). Top jets feature three-prong structure from the $b$ quark and the hadronically decaying $W$ boson if all decay products are caught in one large radius jet (typically $p_{\text{T}}\gtrsim 2m_{Top}$). The background are QCD jets which are characterized by a single hard substructure with diffuse, soft wide-angle radiation. These observables are calculated from the jet constituents, which are calorimeter Topo-clusters in the default case or tracks and subjet-assisted tracks as studied here.
 
+\subsubsection{Prior Mass-Cut}
+Tagging variables are usually used after applying a mass-cut around the interval that contains 68\% of the signal events. Therefore, a cut is applied on the calibrated mass of the large-R calorimeter jet which is calculated to cover the smallest interval around the peak mass that contains 68\% of the signal events. In the Higgs tagging case, there is not enough statistics to derive a conclusive result for $p_{\mathrm{T}} > 2000 \, \text{GeV}$. Hence this study is restricted to the five lower $p_{\mathrm{T}}$ bins.
 
-\subsection{Event weighting and Mass-Cut}
-The substructure variables are compared via their QCD (multi-jet) rejection performance. While the $p_{\mathrm{T}}$ distribution of the multi-jet sample falls exponentially, the $p_{\mathrm{T}}$ of the signal samples features characteristic peaks related to the different resonance masses, see Figure \ref{fig:p_T}. To avoid bias in the comparison, the signal sample is given weights sucht that the truth $p_{\mathrm{T}}$ distribution of the leading jet matches the one of the background sample. Furthermore, the spectrum is split into six different $p_{\mathrm{T}}$ regions to study the behavior with rising energy. 
-\begin{figure} 
-	\includegraphics[width=0.5\textwidth]{sascha_input/plots/track_selection/h_leadpt_truth.pdf} \hspace{1mm}
-	\includegraphics[width=0.5\textwidth]{sascha_input/plots/track_selection/h_leadpt_truth_weight.pdf}
-\caption{\footnotesize{Exemplary $p_{\mathrm{T}}$ distributions of (left) $W$ boson jets and (right) QCD jets from multi-jet events with reweighted $W$ boson events}}\label{fig:p_T}
-\end{figure}
-
-Tagging variables such as C2, D2, $\tau_{21}$ and $\tau_{32}$ are usually used after applying a mass cut around the interval that contains 68\% of the signal events. Therefore, a cut is applied on the calibrated mass of the large-R calorimeter jet which is calculated to cover the smallest interval around the peak mass that contains 68\% of the signal events.
-The comparison is performed in six different $p_{\mathrm{T}}$ regions to study the behavior connected with rising energy of the decaying particle. These regions are presented in the left part of Table \ref{table:mass_cut}. 
-In case of the Higgs boson study, there is not enough statistics to derive a conclusive result for $p_{\mathrm{T}} > 2000 \, \text{GeV}$, since the highest resonance mass of the $G^* \rightarrow HH$ samples is $3000 \, \text{GeV}$ in contrast to $5000 \, \text{GeV}$ for the $Z^\prime \rightarrow tt$ and $W^\prime \rightarrow WZ$ samples. Hence this study is restricted to the five lower $p_{\mathrm{T}}$ bins.
 Prior to tagging with the n-Subjettiness or C2/D2 variables, a cut on the calibrated calorimeter jet mass is applied, given that the mass is the main discriminant in QCD jet rejection. This cut is defined to choose the smallest interval around the peak mass containing 68\% of the signal. However, the reconstructed mass depends on the $p_{\mathrm{T}}$ region, therefore a different cut was calculated for every region to meet the requirements.
 \begin{table}[]
 \centering

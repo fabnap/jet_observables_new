@@ -1,4 +1,4 @@
-%-------------------------------------------------------------------------------
+
 \section{MC Samples and event weighting}
 % \label{sec:mcsample}
 %-------------------------------------------------------------------------------
@@ -37,7 +37,12 @@ with $m_{\tilde{W}}=m_t$ & & & & \\
 \label{tab:mcsamples}
 % \end{center}
 \end{table}
+% <<<<<<< HEAD
+% =======
+The substructure observables are compared via their performance in QCD rejection. While the $p_{\mathrm{T}}$ distribution of the multi-jet sample falls exponentially, the $p_{\mathrm{T}}$ of the signal samples features characteristic peaks related to the resonance masses. To avoid bias in the comparison, the signal sample is given weights such that the truth $p_{\mathrm{T}}$ distribution of the leading jet matches the one of the background sample (see Figure \ref{fig:p_T} in the Appendix). Furthermore, the spectrum is split into six different $p_{\mathrm{T}}$ regions to study the behavior with rising energy.
 \clearpage
+% \newpage
+% >>>>>>> master
 %-------------------------------------------------------------------------------
 \section{Object Definition}
 \label{sec:objdef}
@@ -75,7 +80,7 @@ The grooming algorithms presented here are the most important ones in ATLAS: the
 
 \paragraph{Selection}
 
-The selection applied is typical fro many Beyond the Standard Model searches: $p_T>$ 250 GeV and $|\eta|<$ 2.0 for the large-radius jet.
+The selection applied is typical for many Beyond the Standard Model searches: $p_T>$ 250 GeV and $|\eta|<$ 2.0 for the large-radius jet.
 No other requirements were made for the purpose of the performance studies here shown if not stated differently, e.g. the mass cut selection.
 % The green dots represent the distribution before the selection, which is $\pt >$ 250 GeV and $|\eta|<$ 2.0 and the red dots after this selection. This selection typical for many searches for BSM physics.  All the other samples and the background can be found in the Appendix. 
 % In what follows, it will also be used the nomenclature \textit{boosted W/Z} for the $W'$ sample, \textit{boosted tops} for the $Z'$ sample, \textit{boosted Higgs} for the $G_{RS}$ sample and \textit{massive $W$} for the $W' \to \tilde{W}\tilde{W}$ with $m_{\tilde{W}}=m_t$.
@@ -225,7 +230,7 @@ Full description of this variable is given in the ATLAS CONF Note \cite{art35}.
 
 
 
-\subsection{The Track-Assisted Sub-jet Mass ($\mtas$)}
+\subsection{The Track-Assisted Sub-jet Mass ($\mtas$)}\label{subsec:mtas_def}
 In this section the main outcome of the optimization of the large-radius jet mas reconstruction is presented: the \textit{track-assisted sub-jet mass} ($\mtas$).
 The main idea takes inspiration from the track-assisted mass: if one can use tracks to exploit the better angular resolution and correct the missing neutral component jet-by-jet, there is an additional information that can be used. The neutral fraction, in fact, varies stochastically not only per-jet basis, but even per-sub-jet basis, since the each quark follows a different parton showering and hadronization process.
 Correcting the missed neutral component per-sub-jet, it should perform better already at an intuitive level, as it accesses information from jet substructure.
