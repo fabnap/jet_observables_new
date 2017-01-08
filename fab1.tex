@@ -37,7 +37,7 @@ with $m_{\tilde{W}}=m_t$ & & & & \\
 \label{tab:mcsamples}
 % \end{center}
 \end{table}
-\newpage
+\clearpage
 %-------------------------------------------------------------------------------
 \section{Object Definition}
 \label{sec:objdef}
@@ -119,8 +119,8 @@ Tracks could be used either for independent mass reconstruction or, most importa
 
 \begin{figure}[!ht]
   \centering
-      \includegraphics[width=0.7\textwidth]{jet_part/trackandcalo.png}
-  \caption[Mass distribution for boosted $W/Z$]{Mass distribution boosted $W/Z$: in green the $m^{calo}$ and in red the $m^{track}$. }
+      \includegraphics[width=0.7\textwidth]{jet_part/1cfrt_h_TrackJets_m.pdf}
+  \caption[Mass distribution for $W/Z$ decays]{Mass distribution for $W/Z$ decays: in green the $m^{calo}$ in red the $m^{track}$ and in blue the $\mta$. }
   \label{fig:trackandcalo}
 \end{figure}
 
@@ -276,15 +276,15 @@ There are two ways of sub-jet assisting the tracks for the calculation of the $\
 
 For the substructure variable, however, the first approach cannot be used because of simple cancellation in the computation of the variable.
 
-To generalize the scheme adopted for both, tracks should be assisted singularly. In this note will be shown the $\mtas$ obtained assisting track-jets, since the differences are negligible.
-
+To generalize the scheme adopted for both, tracks should be assisted singularly. In this note will be shown the $\mtas$ obtained assisting track-jets, since the differences are negligible as also shown in Figure \ref{fig:sascha}.
 
 \begin{figure}[!ht]
   \centering
-      \includegraphics[width=0.6\textwidth]{jet_part/mtas/mtas.png}
-  \caption[Pictorial event display]{Pictorial event display showing the $\eta$ $\phi$ region of a large-$R$ anti-k$_t$ trimmed jet, (in blue the catchment area of the anti-k$_t$) showing the different k$_t$ sub-jets: they are highlighted in green, fuchsia and yellow. The associated track-jets (here indicated as arrows pointing the calorimeter area) are colored with the same color of the correspondent sub-jet. Some tracks associated with $\Delta R$ procedure can be seen in the fuchsia sub-jet. The transverse momenta and mass values are also shown for the sub-jets.}
-  \label{fig:mtas1}
+      \includegraphics[width=0.55\textwidth]{jet_part/71graphcftr_h_JetRatio_mJ12CALOIQRoMwsecondApproach.pdf}
+  \caption[Equivalence of approaches]{Performance of the $\mtas$ variable for the two approaches described in this section: assisting the track-jets in red and assisting single track in blue for $W/Z$ decays. They are performing almost identically throughout the entire spectrum of transverse momentum. For the computation of the track-assisted sub-jet variable presented in this document, the first method is being used, because of simplicity of implementation and higher versatility; for the computation of the sub-jet assisted substructure variables the second one is used. The y-axis is explained in the following section.}
+  \label{fig:sascha}
 \end{figure}
+
 
 \paragraph{Assisting Track-Jets}
 Having tracks and sub-jets now well defined, we can describe the recipe to produce the $\mtas$. For brevity we will call the sub-jets SJ in the formulae below. 
@@ -292,6 +292,13 @@ Having tracks and sub-jets now well defined, we can describe the recipe to produ
 As said, the tracks are the ones ghost-associated to the sub-jets; however, tracks which fall inside the area of the large-$R$ jet, but not inside the sub-jets area, are still much probably coming from the hard-scattering. They are then associated again to the closest sub-jets via $\Delta R$ association.
 
 Each sub-jet will have at this point some tracks associated via ghost-association and some other via $\Delta R$ (which are maximally 5\%). We call this set of tracks, a ``custom'' Track-Jet or TJ.
+
+\begin{figure}[!ht]
+  \centering
+      \includegraphics[width=0.6\textwidth]{jet_part/mtas/mtas.png}
+  \caption[Pictorial event display]{Pictorial event display showing the $\eta$ $\phi$ region of a large-$R$ anti-k$_t$ trimmed jet, (in blue the catchment area of the anti-k$_t$) showing the different k$_t$ sub-jets: they are highlighted in green, fuchsia and yellow. The associated track-jets (here indicated as arrows pointing the calorimeter area) are colored with the same color of the correspondent sub-jet. Some tracks associated with $\Delta R$ procedure can be seen in the fuchsia sub-jet. The transverse momenta and mass values are also shown for the sub-jets.}
+  \label{fig:mtas1}
+\end{figure}
 
 At this point, the one-to-one correspondence is preserved (for each SJ there is one and only one TJ), and we can move on correcting the neutral fraction.
 
@@ -404,7 +411,7 @@ Throughout the results presented in the following sections, both observables wer
 \begin{figure}[!ht]
   \centering
       \includegraphics[width=0.7\textwidth]{jet_part/mcomb/mcomb2.png}
-  \caption[$\mcal$ and $\mtas$ correlation plots]{The calorimeter based jet mass mass response versus the track-assisted sub-jet mass response, on the left for boosted $W/Z$ on the right for boosted tops.}
+  \caption[$\mcal$ and $\mtas$ correlation plots]{The calorimeter based jet mass mass response versus the track-assisted sub-jet mass response, on the left for $W/Z$ decays and on the right for tops decays.}
   \label{fig:mcomb2}
 \end{figure}
 
