@@ -109,6 +109,7 @@
 
 \tableofcontents
 
+\newpage
 % List of contributors - print here or after the Bibliography.
 %\PrintAtlasContribute{0.30}
 %\clearpage
@@ -125,7 +126,7 @@ The distribution of energy inside a jet contains information about the initiatin
 particle such as a top quark, Higgs boson or W/Z bosons is produced with significant Lorentz boost and decays into
 quarks, the entire hadronic decay may be captured inside a single jet. The mass of such jets (jet mass)
 is one of the most powerful tools for distinguishing massive particle decays from the continuum multijet
-background; the ratios of Energy Correlation Functions C2 and D2 (see Reference \cite{bib:ECF}) and n-Subjettiness $\tau_{21}$ and $\tau_{32}$ (see Reference \cite{bib:nsub}) provide an ad-hoc tool pupusely developed for the multijet background and constitue a fundamental part of many for boson taggers.
+background; the ratios of Energy Correlation Functions C2 and D2 (see Reference \cite{bib:ECF}) and n-Subjettiness $\tau_{21}$ and $\tau_{32}$ (see Reference \cite{bib:nsub}) provide an ad-hoc tool purposely developed for the multijet background and constitute a fundamental part of many for boson taggers.
 This note documents the so-called subjet-assisted techniques with the ATLAS detector. 
 The track-assisted subjet mass $m^{TAS}$ definition is presented and confronted with the standard development in ATLAS, $m^{comb}$ and $m^{TA}$. 
 Energy Correlation Functions and n-Subjettiness with the modified subjet-assisted technique are presented and confronted with the standard one in ATLAS.
@@ -262,20 +263,20 @@ The note ends with conclusions for the jet observables using subjet-assisted tra
 \section{Performance of Track-assisted subjet mass}
 \label{sec:mtas}
 %-------------------------------------------------------------------------------
-The track-assisted subjet mass takes inspiration from the simpler development which is already implemented within ATLAS, the track-assisted mass which is described briefly below for completeness.
-
+% The track-assisted subjet mass takes inspiration from the simpler development which is already implemented within ATLAS, the track-assisted mass which is described briefly below for completeness.
+The performance of the track-assisted subjet mass is described in this section for the signal and background samples considered.
 \input{fab2.tex}
 \clearpage
 %-------------------------------------------------------------------------------
 \section{Performance of Jet Substructure Observables with (assisted) Tracks}\label{sec:def_beta}
-This section shows the performace of (assisted) tracks compared to clusters as input for the substructure observables C2/D2 and $\tau_{21}$ for $W$ and Higgs tagging as well as $\tau_{32}$ for Top tagging. For now, the angular weighting parameter $\beta$ is set to the default value of 1.
+This section shows the performance of (assisted) tracks compared to clusters as input for the substructure observables C2/D2 and $\tau_{21}$ for $W$ and Higgs tagging as well as $\tau_{32}$ for Top tagging. For now, the angular weighting parameter $\beta$ is set to the default value of 1.
 \subsection{Effect of Track Selection}
 \input{sascha_input/TrackSelection}
 
 \subsection{Performance with default $\beta$}
 \input{sascha_input/results_beta1}
 
-\section{Performance of Jet Substructure Observables with (assisted) Tracks and optimised $\beta$}\label{sec:beta_opt}
+\section{Performance of Jet Substructure Observables with (assisted) Tracks and optimized $\beta$}\label{sec:beta_opt}
 \input{sascha_input/beta_opt}
 
 %----------------------------------
@@ -296,7 +297,7 @@ For $\mta$ the uncertainties are smaller than calorimeter-based jet mass variabl
 For what concerns the $\mtas$, the tracking uncertainties are expected to be identical to the $\mta$, because of the identical use of tracks in both variables, as also discussed in the BOOST Conference Note \cite{art35}.
 The only significant difference in this regard of $\mta$ with respect to $\mtas$ is the $p_T^{jet}$ instead of the $p_T^{subjet}$: the uncertainties in the first one are calculated in-situ using $p_T$ balance methods, and they are generally well-behaved; for the second one, the uncertainties are also expected to lay in the same order of magnitude. In Figure \ref{fig:uncert} the comparison of the uncertainties for the $\mcal$ on the left and $\mta$ on the right shows the smaller fractional JMS uncertainties in the use of the track-assisted method.
 
-The path to bring $\mtas$ ready to usage needs of course to evaluate the uncertainties on the  $p_T^{subjet}$ which can be provided with the R-Scan procedure which includes the anti-k$_t$ sub-jets of radius of 0.2; those were already showed to have a similar performance of the k$_t$ sub-jets used as standard.
+The path to bring $\mtas$ ready to usage needs of course to evaluate the uncertainties on the  $p_T^{subjet}$ which can be provided with the R-Scan procedure which includes the anti-k$_t$ subjet of radius of 0.2; those were already showed to have a similar performance of the k$_t$ subjet used as standard.
 
 The $\mtas$ moreover is expected to have little to none benefit from the calibration procedure which could be provided from the R-Scan as well, as already shown and discussed in the previous chapter. 
 
@@ -327,13 +328,13 @@ In all the cases studied, it has a better behavior than the $\mcomb$, $\mcal$ an
 
 % For the simple scenario here the procedure that would take place is the direct Monte Carlo calibration of the $\mtas$, aiming at correcting the reconstructed jet mass to the particle-level jet mass by applying the calibration factors derived from QCD multijet events, an analogous procedure to the one described in Section \ref{sec:calib} for the jet energy scale.
 
-% The more complex scenario considers an additional calibration to the sub-jets with R=0.2, which is already at an advanced stage within ATLAS for anti-k$_t$ reclustering algorithm (it has a slightly worse performance than k$_t$, as presented previously). 
+% The more complex scenario considers an additional calibration to the subjet with R=0.2, which is already at an advanced stage within ATLAS for anti-k$_t$ reclustering algorithm (it has a slightly worse performance than k$_t$, as presented previously). 
 
 % The uncertainties are expected to be similar to the one which were derived for the $\mta$ and which are compared to the $\mcal$ on Figure \ref{fig:uncert}; the tracking uncertainties are smaller for the track-assisted mass because of the ratio $m^{track}/p_T^{track}$ and will be smaller as well for the track-assisted  sub-jet mass since it uses the same ratio.
 
 % In-situ uncertainties were derived for the $\mta$ with a sample of enriched top-quark; the same technology used here can be applied to the $\mtas$.
 
-% In the more complex scenario, the uncertainties could be derived for the sub-jets R=0.2 reclustered with anti-k$_{t}$.
+% In the more complex scenario, the uncertainties could be derived for the subjet R=0.2 reclustered with anti-k$_{t}$.
 %------------------------------------------------------------------------------
 % \subsection{Energy Correlation Functions and n-Subjettiness}
 
@@ -341,7 +342,7 @@ The performance of the Energy Correlation Functions and n-Subjettiness observabl
 
 Subjet-assisted tracks performed superior for lower and intermediate boosts. At very high energies, the assisting was shown to loose effect on the studied observables and tracks and TAS equally outperform the cluster based variables in terms of QCD rejection.
 
-For the three cases of $W$, Higgs and Top tagging, the optimal variables were identified and the $p_{\text{T}}$ behaviour of the cut-value for two different working points were studied. 
+For the three cases of $W$, Higgs and Top tagging, the optimal variables were identified and the $p_{\text{T}}$ behavior of the cut-value for two different working points were studied. 
 
 %For the very conclusion, both the variables constructed in the work of this thesis, $\mtas$ and $\mcombtas$, exhibit a better performance of their counterparts, $\mta$ and $\mcomb$, which are now ready to be use or in preparation within the ATLAS collaboration, and share the same advantages -and disadvantages. Further steps are necessary to get this observables to usage: calibration and uncertainties.
 
