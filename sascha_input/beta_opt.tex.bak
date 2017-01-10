@@ -1,0 +1,173 @@
+The observed background rejection of variables calculated with TAS and tracks is at least as high as of calorimeter cluster based variables due to the high angular resolution of tracks. Therefore, studied are the effects of a higher weighting of the angular part of the substructure variables. For completeness, considered as well is a lower weighting. Previous studies of default calorimeter variables for $W$ boson tagging, see e.g. Reference \cite{bib:w_tagging}, found $\beta=1$ to maximize the separation power of calorimeter variables.
+
+A scan over the values $\beta= 0.5, 1, 1.7, 2, 3$ is performed in order to identify the best variables for the specific scenarios of tagging $W$ boson, Higgs boson or top quark jets. The background rejections, achieved at the $50\,\%$ working point after mass cut and tagging are summarized in tables. The corresponding ROCs can be found at the end of this section \ref{subsec:best_ROC}. Pseudo-experiments were used to propagate the uncertainties on the signal and background distributions due to the finite size of the MC samples to the background rejections. 
+
+\subsubsection{Optimization for $W$ Tagging}
+The results of the optimization for $W$ jets can be found in Appendix \ref{appendix:w_optimisation}. As expected, tracks and TAS perform visibly worse with a low angular weighting. For higher values of $\beta$, tracks and TAS gain in separation power, verifying the significance of the angular part for track based variables. Nevertheless, the separation is observed to degrade for angular weightings too high compared to the $p_{\mathrm{T}}$ part, here $\beta=3$.
+
+A $\beta$ of around 2 maximizes the separation power of tracks and TAS. The advantages of $\beta=2$ compared to $\beta=1$ are found at higher $p_{\mathrm{T}}$ values, minor losses are visible in the lowest energy regions. A slightly lower value of $\beta=1.7$ was able to retain the great background rejection of a large angular weighting at high $p_{\mathrm{T}}$ while still performing well at lower energies. Variables calculated with clusters are not as sensitive to a variation of the angular weighting.
+
+C2 is found to be relatively insensitive to the track assisting, whereas separation with $\tau_{21}$ and D2 (for lower energies) is visibly poorer with tracks compared to TAS.  Starting around $1200\;$GeV, tracks perform comparably and for even higher energies equally well as TAS due to the rising amount of large-R jets with only one sub-jet. Comparing variables independently for the different inputs, $\tau_{21}$ performs worse than C2 and D2. However, e.g. $\tau_{21,\: \text{TAS}}$ can outperform $\text{C2}_{\text{calo}}$ and $\text{D2}^{\text{calo}}$.
+
+The variables achieving the highest background rejections for $W$ boson tagging are $\text{D2}_{\text{TAS}}^{(\beta=1.7)}$ and $\text{C2}_{\text{TAS}}^{(\beta=1.7)}$, depending on the energy. D2 cut values were shown to be more $p_{\mathrm{T}}$ robust, C2 could also be used with tracks instead of TAS, which saves the assistance. For TAS variables, uncertainties on the sub-jets, whose derivation is being worked at, need to be propagated while tracks feature already well-known uncertainties.
+
+
+Shown in Figure \ref{fig:w_cut} are the cut values for $50\,\%$ and $25\,\%$ signal efficiency for $\text{D2}_{\text{TAS}}^{(\beta=1.7)}$ and $\text{C2}_{\text{TAS}}^{(\beta=1.7)}$. $\text{D2}_{\text{TAS}}^{(\beta=1.7)}$. As for the default cluster variables, the $\text{D2}_{\text{TAS}}^{(\beta=1.7)}$ cut is more $p_{\mathrm{T}}$ robust than the cut on $\text{C2}_{\text{TAS}}^{(\beta=1.7)}$. 
+\begin{figure}
+\includegraphics[width=0.5\textwidth]{sascha_input/plots/W/cut_value/c2_tas17.pdf} \hspace{1mm}
+\includegraphics[width=0.5\textwidth]{sascha_input/plots/W/cut_value/d2_tas17.pdf}	
+\caption{\footnotesize{Cut values for $\text{C2}_{\text{TAS}}^{(\beta=1.7)}$ (left) and $\text{D2}_{\text{TAS}}^{(\beta=1.7)}$ (right) to achieve $50\,\%$ and $25\,\%$ $W$ boson efficiency.}}\label{fig:w_cut}
+\end{figure}
+%The steeper $50\,\%$ working point curves can be explained with the signal distributions, see Figure \ref{fig:w_distris}. The signal distributions rise steeply for low values, which doesn't chance considerably with rising $p_{\mathrm{T}}$. The right-handed tail of the distributions in contrast becomes increasingly narrow for $\text{C2}_{\text{TAS}}^{(\beta=1.7)}$ and broader for $\text{D2}_{\text{TAS}}^{(\beta=1.7)}$. Therefore, the curves for the $50\,\%$ cut feature a larger slope as the $25\,\%$ cut, which already given by the sharp rise. 
+
+Table \ref{table:w_improvement} lists the background rejections for $\text{D2}_{\text{TAS}}^{(\beta=1.7)}$, $\text{C2}_{\text{TAS}}^{(\beta=1.7)}$ and the currently used $\text{D2}^{\beta=1}_{calo}$ along with the corresponding improvements. For lower energies, $\text{D2}_{\text{TAS}}^{(\beta=1.7)}$ is the best choice. For very high boosts of the $W$ boson, $\text{C2}_{\text{TAS}}^{(\beta=1.7)}$ performs superior, especially for $25\,\%$ $\epsilon_{signal}$, where the background rejection with $\text{C2}_{\text{TAS}}^{(\beta=1.7)}$ is around 3.5 times as large as the QCD rejection with $\text{D2}^{(\beta=1)}_{\text{calo}}$.
+%\begin{figure}[]
+%\includegraphics[width=0.25\textwidth]{sascha_input/plots/W/cut_value/h_assisted_tj_C2_17_bin1.pdf} 
+%\includegraphics[width=0.25\textwidth]{sascha_input/plots/W/cut_value/h_assisted_tj_C2_17_bin4.pdf} 
+%\includegraphics[width=0.25\textwidth]{sascha_input/plots/W/cut_value/h_assisted_tj_D2_17_bin1.pdf} 
+%\includegraphics[width=0.25\textwidth]{sascha_input/plots/W/cut_value/h_assisted_tj_D2_17_bin4.pdf} 
+%\caption{\footnotesize{$W$ boson signal and QCD background distributions for C2 TAS at $\beta=1.7$ (above) and D2 TAS at $\beta=1.7$ (below) for the %first (left) and fourth (right) $p_{\mathrm{T}}$ bin.}}\label{fig:w_distris}
+%\end{figure}
+These enormous improvements at lower $\epsilon_{signal}$ are due to the signal distributions for TAS and tracks rising much steeper than for clusters. The tail to higher, background like values in contrast, is more comparable, leading to an alignment of the background rejection for very large $\epsilon_{signal}$.
+\begin{table}[]
+\centering
+\begin{tabular}{llll}
+ \multicolumn{1}{l||}{\textbf{50\% $\epsilon_{signal}$}} &                                                & \textbf{W tagging}                                         &                                          \\ \hline
+\multicolumn{1}{l||}{$p_{\mathrm{T}} \, \text{[GeV]}$}           & \multicolumn{1}{l|}{$\text{D2}_{\text{calo}}^{(\beta=1)}$} & \multicolumn{1}{l|}{$\text{D2}_{\text{TAS}}^{(\beta=1.7)}$} & \multicolumn{1}{l|}{$\text{C2}_{\text{TAS}}^{(\beta=1.7)}$} \\ \hline \hline
+\multicolumn{1}{l||}{250 - 500}                       & \multicolumn{1}{l|}{35.0 $\pm$ 2.0}                      & \multicolumn{1}{l|}{\cellcolor{Red!50}35.4 $\pm$ 2.3 (+1 $\pm$ 9\%)}         & \multicolumn{1}{l|}{28.9 $\pm$ 1.5 (-17 $\pm$ 6\%)}        \\
+\multicolumn{1}{l||}{500 - 800}                       & \multicolumn{1}{l|}{55.3 $\pm$ 2.6}                      & \multicolumn{1}{l|}{\cellcolor{Red!50}67.6 $\pm$ 3.2 (+22 $\pm$ 8\%)}        & \multicolumn{1}{l|}{58.6 $\pm$ 2.6 (+6 $\pm$ 7\%)}         \\
+\multicolumn{1}{l||}{800 - 1200}                      & \multicolumn{1}{l|}{41.1 $\pm$ 2.0}                      & \multicolumn{1}{l|}{\cellcolor{Red!50}54.9 $\pm$ 2.4 (+34 $\pm$ 9\%)}        & \multicolumn{1}{l|}{54.6 $\pm$ 2.8 (+33 $\pm$ 9\%)}        \\
+\multicolumn{1}{l||}{1200 - 1600}                     & \multicolumn{1}{l|}{38.1 $\pm$ 1.9}                      & \multicolumn{1}{l|}{50.8 $\pm$ 1.8 (+33 $\pm$ 8\%)}        & \multicolumn{1}{l|}{\cellcolor{Red!50}53.8 $\pm$ 2.7 (+41 $\pm$ 10\%)}        \\
+\multicolumn{1}{l||}{1600 - 2000}                     & \multicolumn{1}{l|}{25.4 $\pm$ 1.3}                      & \multicolumn{1}{l|}{37.8 $\pm$ 2.0 (+49 $\pm$ 11\%)}       & \multicolumn{1}{l|}{\cellcolor{Red!50}50.9 $\pm$ 4.3 (+100 $\pm$ 20\%)}       \\
+\multicolumn{1}{l||}{$>2000$}                         & \multicolumn{1}{l|}{21.9 $\pm$ 1.7}                      & \multicolumn{1}{l|}{36.3 $\pm$ 2.0 (+66 $\pm$ 16\%)}       & \multicolumn{1}{l|}{\cellcolor{Red!50}46.1 $\pm$ 4.7 (+111 $\pm$ 27\%)}       \\ \hline
+                                                     &                                                &                                          &                                          \\
+ \multicolumn{1}{l||}{  \textbf{25\% $\epsilon_{signal}$}} &                                                &  \textbf{W tagging}                                         &                                          \\ \hline
+\multicolumn{1}{l||}{$p_{\mathrm{T}} \, \text{[GeV]}$}           & \multicolumn{1}{l|}{$\text{D2}_{\text{calo}}^{(\beta=1)}$} & \multicolumn{1}{l|}{$\text{D2}_{\text{TAS}}^{(\beta=1.7)}$} & \multicolumn{1}{l|}{$\text{C2}_{\text{TAS}}^{(\beta=1.7)}$} \\ \hline \hline
+\multicolumn{1}{l||}{250 - 500}                       & \multicolumn{1}{l|}{139.6 $\pm$ 9.8}                     	& \multicolumn{1}{l|}{\cellcolor{Red!50}146.0 $\pm$ 12.4 (+5 $\pm$ 12\%)}         & \multicolumn{1}{l|}{108.2 $\pm$ 7.5 (-22 $\pm$ 8\%)}       \\
+\multicolumn{1}{l||}{500 - 800}                       & \multicolumn{1}{l|}{243.7 $\pm$ 13.2}                     	& \multicolumn{1}{l|}{\cellcolor{Red!50}360.1 $\pm$ 21.1 (+48 $\pm$ 12\%)}        & \multicolumn{1}{l|}{298.4 $\pm$ 15.9 (+22 $\pm$ 9\%)}        \\
+\multicolumn{1}{l||}{800 -1200}                       & \multicolumn{1}{l|}{181.0 $\pm$ 8.8}                     	& \multicolumn{1}{l|}{308.5 $\pm$ 19.3 (+70 $\pm$ 14\%)}        & \multicolumn{1}{l|}{\cellcolor{Red!50}313.2 $\pm$ 24.4 (+78 $\pm$ 16\%)}       \\
+\multicolumn{1}{l||}{1200 - 1600}                     & \multicolumn{1}{l|}{156.9 $\pm$ 8.3}                     	& \multicolumn{1}{l|}{295.4 $\pm$ 17.8 (+88 $\pm$ 15\%)}        & \multicolumn{1}{l|}{\cellcolor{Red!50}354.6 $\pm$ 25.6 (+126 $\pm$ 20\%)}      \\
+\multicolumn{1}{l||}{1600 - 2000}                     & \multicolumn{1}{l|}{84.6 $\pm$ 5.7}                      	& \multicolumn{1}{l|}{219.6 $\pm$ 10.9 (+160 $\pm$ 22\%)}       & \multicolumn{1}{l|}{\cellcolor{Red!50}320.5 $\pm$ 31.4 (+279 $\pm$ 45\%)}       \\
+\multicolumn{1}{l||}{$>2000$}                         & \multicolumn{1}{l|}{78.9 $\pm$ 7.6}                      	& \multicolumn{1}{l|}{233.5 $\pm$ 14.7 (+196 $\pm$ 34\%)}       & \multicolumn{1}{l|}{\cellcolor{Red!50}288.4 $\pm$ 33.3 (+266 $\pm$ 55\%)}      \\ \hline
+\end{tabular}
+
+\caption{Listing of the background rejections after the jet mass cut and tagging at 50\% and 25\% $W$ boson efficiency for the identified best variables $\text{D2}_{\text{TAS}}^{(\beta=1.7)}$ \& $\text{C2}_{\text{TAS}}^{(\beta=1.7)}$ together with the improvements over the standard choice $\text{D2}_{\text{calo}}^{(\beta=1)}$. Highlighted in red is the best variable in each studied energy range.}\label{table:w_improvement}
+\end{table}
+
+
+
+\subsubsection{Optimization for Higgs Tagging}
+The results of the optimization for Higgs jets can be found in Appendix \ref{appendix:higgs_optimisation}. The study of $\beta=1$ in the Higgs boson case, see section \ref{subsubsec:higgs_beta1}, showed no improvements in the rejection of QCD events due to tracks and TAS as input. As for the $W$ boson, the performance of tracks and TAS diminishes considerably with an angular weighting of $\beta=0.5$.
+
+No improvement of $\tau_{21}$ is observed with tracks or TAS, clusters perform equally well for lower $p_{\mathrm{T}}$ and slightly better at high energies. Again, the QCD rejection achieved with $\tau_{21}$ is exceeded by C2 and D2. The discrimination with clusters profits from a slightly higher angular weighting, although the gain is not as significant as for tracks and TAS. This consistently shows the lower sensitivity to a variation of the angular weight. The small gain is connected to the higher separation of the Higgs decay products compared to the $W$ boson case.
+
+For boosted Higgs tagging, D2 outperforms C2 over the whole studied energy range. Values of $\beta=1.7 \& 2$ yield the highest background rejection for track and TAS based D2. $\text{D2}_{\text{TAS}}^{(\beta=1.7,2}$ and $\text{D2}_{\text{track}}^{(\beta=1.7,2}$ perform superior to $\text{D2}_{\text{calo}}$ at high boosts, due to the low angular separation of constituents, and equally well at lower enegies.
+
+The differences between $\beta=1.7$ and $\beta=2$ are inconclusive with minor advantages at high and slight inferiorities at low $p_{\mathrm{T}}$ for $\beta=2$. Tracks perform slightly worse than TAS for lower energies but similarly better in the two highest studied $p_{\mathrm{T}}$ regions. Chosen for further examination are $\text{D2}_{\text{TAS}^{(\beta=1.7)}}$ and $\text{D2}_{\text{track}^{(\beta=1.7)}}$.
+
+Shown in Figure \ref{fig:higgs_cut} are the cut values for $50\,\%$ and $25\,\%$ signal efficiency for $\text{D2}_{\text{TAS}}^{(\beta=1.7)}$ and $\text{D2}_{\text{track}}^{(\beta=1.7)}$. The cut value shows a slight upward trend for rising $p_{\mathrm{T}}$. Moreover, cut values for the first bin are higher as for the second, in contrast to the overall upward trend of D2. This is the result of the low boost in the lowest $p_{\mathrm{T}}$ region resulting in a left shoulder of the mass distributions representing large-R jets containing only part of the Higgs boson decay. These jets feature one-prong structure and result in background-like D2 values. The TAS D2 cut is marginally higher than the corresponding track D2 cut since the assisted tracks have a higher $p_{\mathrm{T}}$ and the D2 cut features a rising tendency with $p_{\mathrm{T}}$. 
+\begin{figure}
+\includegraphics[width=0.5\textwidth]{sascha_input/plots/Higgs/cut_value/d2_tas17.pdf} \hspace{1mm}
+\includegraphics[width=0.5\textwidth]{sascha_input/plots/Higgs/cut_value/d2_tracks17.pdf}
+\caption{\footnotesize{Cut values for $\text{D2}_{\text{TAS}}^{(\beta=1.7)}$ (left) and $\text{D2}_{\text{track}}^{(\beta=1.7)}$ (right) to achieve 50\% and 25\% Higgs boson efficiency.}}\label{fig:higgs_cut}
+\end{figure}
+
+Listed in Table \ref{table:higgs_improvement} are the background rejections for $\text{D2}_{\text{TAS}}^{(\beta=1.7)}$, $\text{D2}_{\text{track}}^{(\beta=1.7)}$, and for the best calorimeter variable, which is $\text{D2}_{\text{calo}}^{(\beta=1)}$, with the corresponding improvements due to the use of TAS respectively tracks instead of clusters. At very high energies, the angle between the $b\bar{b}$ pair is small despite the high Higgs boson mass and the effect of the calorimeter cell size becomes significant. 
+\begin{table}[]
+\centering
+\begin{tabular}{llll}
+ \multicolumn{1}{l||}{\textbf{50\% $\epsilon_{signal}$}} &                                                &  \textbf{Higgs tagging}                                        &                                          \\ \hline
+\multicolumn{1}{l||}{$p_{\mathrm{T}} \, \text{[GeV]}$}           & \multicolumn{1}{l|}{$\text{D2}_{\text{calo}}^{(\beta=1)}$} & \multicolumn{1}{l|}{$\text{D2}_{\text{TAS}}^{(\beta=1.7)}$} & \multicolumn{1}{l|}{$\text{D2}_{\text{track}}^{(\beta=1.7)}$} \\ \hline \hline
+\multicolumn{1}{l||}{250 - 500}                       & \multicolumn{1}{l|}{8.4 $\pm$ 0.2}                      & \multicolumn{1}{l|}{\cellcolor{Red!50}8.5 $\pm$ 0.2 (+1 $\pm$ 4\%)}          & \multicolumn{1}{l|}{8.3 $\pm$ 0.2 (-1 $\pm$ 3\%)}        \\
+\multicolumn{1}{l||}{500 - 800}                       & \multicolumn{1}{l|}{17.7 $\pm$ 0.4}                      & \multicolumn{1}{l|}{\cellcolor{Red!50}18.7 $\pm$ 0.4 (+6 $\pm$ 3\%)}        & \multicolumn{1}{l|}{17.9 $\pm$ 0.4 (+1 $\pm$ 3\%)}         \\
+\multicolumn{1}{l||}{800 - 1200}                      & \multicolumn{1}{l|}{26.3 $\pm$ 0.6}                      & \multicolumn{1}{l|}{\cellcolor{Red!50}28.5 $\pm$ 0.7 (+8 $\pm$ 4\%)}        & \multicolumn{1}{l|}{28.0 $\pm$ 0.7 (+6 $\pm$ 4\%)}        \\
+\multicolumn{1}{l||}{1200 - 1600}                     & \multicolumn{1}{l|}{27.0 $\pm$ 0.8}                      & \multicolumn{1}{l|}{28.9 $\pm$ 0.7 (+7 $\pm$ 4\%)}        & \multicolumn{1}{l|}{\cellcolor{Red!50}30.0 $\pm$ 0.8 (+11 $\pm$ 4\%)}        \\
+\multicolumn{1}{l||}{1600 - 2000}                     & \multicolumn{1}{l|}{14.9 $\pm$ 0.8}                      & \multicolumn{1}{l|}{17.7 $\pm$ 0.8 (+19 $\pm$ 8\%)}       & \multicolumn{1}{l|}{\cellcolor{Red!50}18.5 $\pm$ 0.8 (+24 $\pm$ 9\%)}       \\ \hline
+                                                     &                                                &                                          &                                          \\
+ \multicolumn{1}{l||}{\textbf{25\% $\epsilon_{signal}$}} &                                                &      \textbf{Higgs tagging}                                    &                                          \\ \hline
+\multicolumn{1}{l||}{$p_{\mathrm{T}} \, \text{[GeV]}$}           & \multicolumn{1}{l|}{$\text{D2}_{\text{calo}}^{(\beta=1)}$} & \multicolumn{1}{l|}{$\text{D2}_{\text{TAS}}^{(\beta=1.7)}$} & \multicolumn{1}{l|}{$\text{D2}_{\text{track}}^{(\beta=1.7)}$} \\ \hline \hline
+\multicolumn{1}{l||}{250 - 500}                       & \multicolumn{1}{l|}{25.1 $\pm$ 0.6}                     & \multicolumn{1}{l|}{28.9 $\pm$ 0.7 (+15 $\pm$ 4\%)}        & 	\multicolumn{1}{l|}{\cellcolor{Red!50}30.5 $\pm$ 0.8 (+22 $\pm$ 4\%)}       \\
+\multicolumn{1}{l||}{500 - 800}                       & \multicolumn{1}{l|}{54.1 $\pm$ 1.4}                     & \multicolumn{1}{l|}{\cellcolor{Red!50}69.6 $\pm$ 1.9 (+29 $\pm$ 5\%)}       & 	\multicolumn{1}{l|}{64.9 $\pm$ 1.8 (+20 $\pm$ 5\%)}        \\
+\multicolumn{1}{l||}{800 -1200}                       & \multicolumn{1}{l|}{90.8 $\pm$ 2.5}                     & \multicolumn{1}{l|}{\cellcolor{Red!50}121.3 $\pm$ 3.4 (+34 $\pm$ 5\%)}       & 	\multicolumn{1}{l|}{117.9 $\pm$ 3.2 (+30 $\pm$ 5\%)}       \\
+\multicolumn{1}{l||}{1200 - 1600}                     & \multicolumn{1}{l|}{97.6 $\pm$ 3.1}                     & \multicolumn{1}{l|}{117.7 $\pm$ 3.8 (+21 $\pm$ 5\%)}       & 	\multicolumn{1}{l|}{\cellcolor{Red!50}122.4 $\pm$ 4.2 (+25 $\pm$ 6\%)}      \\
+\multicolumn{1}{l||}{1600 - 2000}                     & \multicolumn{1}{l|}{54.6 $\pm$ 3.5}                     & \multicolumn{1}{l|}{74.0 $\pm$ 5.7 (+36 $\pm$ 14\%)}      & 	\multicolumn{1}{l|}{\cellcolor{Red!50}75.0 $\pm$ 5.1 (+37 $\pm$ 13\%)}       \\ \hline
+\end{tabular}
+\caption{Listing of the background rejections after the jet mass cut and tagging at 50\% and 25\% Higgs signal efficiency for the identified best variables $\text{D2}_{\text{TAS}}^{(\beta=1.7)}$ \& $\text{D2}_{\text{track}}^{(\beta=1.7)}$ together with the improvements over the best variable with clusters, $\text{D2}_{\text{calo}}^{(\beta=1)}$. Highlighted in red is the best variable in each studied energy range.}\label{table:higgs_improvement}
+\end{table}
+
+\subsubsection{Optimization for Top Tagging}
+The results of the optimization for Top jets can be found in Appendix \ref{appendix:top_optimisation}. Studied was $\tau_{32}$ with values of $\beta \ge 1$,  since the $W$ boson and Higgs boson parts affirmed the expected lower performance of track and TAS based variables with an angular weighting of $\beta \le 1$. The calorimeter $\tau_{32}$ variable profits from a higher angular weighting up to around $\beta=2$, but degrades in performance for $\beta=3$. Since the involved three prong structure of the top quark decay requires a good angular separation of the jet constituents to be resolved, tracks and TAS perform superior to clusters. A higher angular weighting does not improve the separation power of track and TAS variables, $\beta=2$ already diminishes the performance. The best discrimination is achieved with TAS and $\beta=1,1.7$. The marginal differences between both values of $\beta$ depend on the considered $p_{\mathrm{T}}$ region. Track $\tau_{32,\;\text{track}}$ achieves lower separation as $\tau_{32,\;\text{TAS}}$, except for regions with very high boosts, but as well outperforms the cluster variable.
+
+Shown in Figure \ref{fig:top_cut} are the cut values for $50\,\%$ and $25\,\%$ signal efficiency for $\tau_{32,\;\text{TAS}}^{(\beta=1.7)}$ and $\tau_{32,\;\text{track}}^{(\beta=1.7)}$. The crack between the first and second $p_{\mathrm{T}}$ bin is more evident since the top quark with its much higher mass is here very unlikely to be reconstructed into a single large-R jet, resulting in background like signal events. Furthermore, $\tau_{32} \: (\beta=1.7)$ needs to be cut at lower values as $\tau_{32}\: (\beta=1)$ to achieve a certain signal efficiency. This is the result of the higher angular weighting that shifts the overall distributions to lower values, because the angular distance between two constituents inside a (highly) boosted large-R jet is in the majority of cases lower than one. Thus, the angular part of $\tau_{32}$ decreases with $\beta > 1$. The TAS $\tau_{32}$ cut value is observed to be robust against variations of $p_{\mathrm{T}}$, in accordance to the results of the $p_{\mathrm{T}}$ correlation plots, see \ref{fig:correlation_tau21}.
+\begin{figure}[htp]
+\includegraphics[width=0.5\textwidth]{sascha_input/plots/Top/cut_values/tau32_tas1.pdf} \hspace{1mm}
+\includegraphics[width=0.5\textwidth]{sascha_input/plots/Top/cut_values/tau32_tas17.pdf}
+\caption{\footnotesize{Cut values for $\tau_{32,\;\text{TAS}}^{(\beta=1)}$ (left) and $\tau_{32,\;\text{TAS}}^{(\beta=1.7)}$ (right) to achieve 50\% and 25\% Top quark efficiency}}\label{fig:top_cut}
+\end{figure}
+
+Listed in Table \ref{table:top_improvement} are the background rejections for $\tau_{32,\;\text{TAS}}^{(\beta=1)}$, $\tau_{32,\;\text{TAS}}^{(\beta=1.7)}$ and the best cluster based variable, $\tau_{32,\;\text{calo}}^{(\beta=2)}$. The differences between both values of $\beta$ with TAS are marginal, as well for lower signal efficiencies. Improvements due to the use of TAS instead of clusters are possible for Top quark tagging over the whole studied $p_{\mathrm{T}}$ range.
+\begin{table}
+\centering
+\begin{tabular}{llll}
+ \multicolumn{1}{l||}{\textbf{50\% $\epsilon_{signal}$}} &                                                & \textbf{Top Tagging}                                          &                                          \\ \hline
+\multicolumn{1}{l||}{$p_{\mathrm{T}} \, \text{[GeV]}$}           & \multicolumn{1}{l|}{$\text{D2}_{\text{calo}}^{(\beta=2)}$} & \multicolumn{1}{l|}{$\tau_{32,\;\text{TAS}}^{(\beta=1)}$} & \multicolumn{1}{l|}{$\tau_{32,\;\text{TAS}}^{(\beta=1.7)}$} \\ \hline \hline
+\multicolumn{1}{l||}{250 - 500}                       & \multicolumn{1}{l|}{9.5 $\pm$ 0.2}                      &  \multicolumn{1}{l|}{\cellcolor{Red!50}10.7 $\pm$ 0.2 (+13 $\pm$ 3 \%)}        & \multicolumn{1}{l|}{10.1 $\pm$ 0.2 (+6 $\pm$ 3 \%)}        \\
+\multicolumn{1}{l||}{500 - 800}                       & \multicolumn{1}{l|}{22.4 $\pm$ 0.6}                      & \multicolumn{1}{l|}{\cellcolor{Red!50}22.8 $\pm$ 0.6 (+2 $\pm$ 4 \%)}         & \multicolumn{1}{l|}{\cellcolor{Red!50}22.8 $\pm$ 0.6 (+2 $\pm$ 4 \%)}         \\
+\multicolumn{1}{l||}{800 - 1200}                      & \multicolumn{1}{l|}{20.6 $\pm$ 0.5}                      & \multicolumn{1}{l|}{23.6 $\pm$ 0.6 (+15 $\pm$ 4 \%)}        & \multicolumn{1}{l|}{\cellcolor{Red!50}24.1 $\pm$ 0.6 (+17 $\pm$ 4 \%)}        \\
+\multicolumn{1}{l||}{1200 - 1600}                     & \multicolumn{1}{l|}{16.6 $\pm$ 0.4}                      & \multicolumn{1}{l|}{22.0 $\pm$ 0.6 (+33 $\pm$ 5 \%)}        & \multicolumn{1}{l|}{\cellcolor{Red!50}22.3 $\pm$ 0.6 (+34 $\pm$ 5 \%)}        \\
+\multicolumn{1}{l||}{1600 - 2000}                     & \multicolumn{1}{l|}{13.3 $\pm$ 0.4}                      & \multicolumn{1}{l|}{\cellcolor{Red!50}18.9 $\pm$ 0.6 (+42 $\pm$ 6 \%)}        & \multicolumn{1}{l|}{18.8 $\pm$ 0.6 (+41 $\pm$ 6 \%)}       \\ 
+\multicolumn{1}{l||}{$>2000$}                     	  & \multicolumn{1}{l|}{10.9 $\pm$ 0.4}                      & \multicolumn{1}{l|}{\cellcolor{Red!50}16.5 $\pm$ 0.7 (+51 $\pm$ 8 \%)}        & \multicolumn{1}{l|}{15.7 $\pm$ 0.7 (+44 $\pm$ 8 \%)}       \\ \hline
+                                                     &                                                &                                          &                                          \\
+ \multicolumn{1}{l||}{\textbf{25\% $\epsilon_{signal}$}} &                                                &  \textbf{Top Tagging}                                        &                                          \\ \hline
+\multicolumn{1}{l||}{$p_{\mathrm{T}} \, \text{[GeV]}$}           & \multicolumn{1}{l|}{$\text{D2}_{\text{calo}}^{(\beta=2)}$} & \multicolumn{1}{l|}{$\tau_{32,\;\text{TAS}}^{(\beta=1)}$} & \multicolumn{1}{l|}{$\tau_{32,\;\text{TAS}}^{(\beta=1.7)}$} \\ \hline \hline
+\multicolumn{1}{l||}{250 - 500}                       & \multicolumn{1}{l|}{33.7 $\pm$ 1.0}                     & \multicolumn{1}{l|}{\cellcolor{Red!50}37.6 $\pm$ 1.4 (+12 $\pm$ 5 \%)}       & \multicolumn{1}{l|}{36.7 $\pm$ 1.2 (+9 $\pm$ 5 \%)}       \\
+\multicolumn{1}{l||}{500 - 800}                       & \multicolumn{1}{l|}{114.7 $\pm$ 3.3}                    & \multicolumn{1}{l|}{138.0 $\pm$ 4.3 (+20 $\pm$ 5 \%)}       & \multicolumn{1}{l|}{\cellcolor{Red!50}139.1 $\pm$ 4.2 (+21 $\pm$ 5 \%}        \\
+\multicolumn{1}{l||}{800 -1200}                       & \multicolumn{1}{l|}{97.0 $\pm$ 2.7}                     & \multicolumn{1}{l|}{144.6 $\pm$ 4.9 (+49 $\pm$ 7 \%)}       & \multicolumn{1}{l|}{\cellcolor{Red!50}149.6 $\pm$ 5.2 (+54 $\pm$ 7 \%)}       \\
+\multicolumn{1}{l||}{1200 - 1600}                     & \multicolumn{1}{l|}{68.6 $\pm$ 2.1}                     & \multicolumn{1}{l|}{133.2 $\pm$ 4.6 (+94 $\pm$ 9 \%)}       & \multicolumn{1}{l|}{\cellcolor{Red!50}134.7 $\pm$ 5.1 (+96 $\pm$ 10 \%)}      \\
+\multicolumn{1}{l||}{1600 - 2000}                     & \multicolumn{1}{l|}{47.5 $\pm$ 1.6}                     & \multicolumn{1}{l|}{\cellcolor{Red!50}100.3 $\pm$ 4.2 (+111 $\pm$ 11 \%)}      & \multicolumn{1}{l|}{99.9 $\pm$ 4.4 (+110 $\pm$ 12 \%)}       \\ 
+\multicolumn{1}{l||}{$>2000$}                         & \multicolumn{1}{l|}{36.3 $\pm$ 1.6}                     & \multicolumn{1}{l|}{\cellcolor{Red!50}80.2 $\pm$ 5.0 (+121 $\pm$ 17 \%)}      & \multicolumn{1}{l|}{75.5 $\pm$ 4.9 (+108 $\pm$ 16 \%)}       \\ \hline
+\end{tabular}
+\caption{Listing of the background rejections after the jet mass cut and tagging at 50\% and 25\% top signal efficiency for the identified best variables $\tau_{32,\;\text{TAS}}^{(\beta=1,1.7)}$ together with the improvements over the best variable with clusters, $\text{D2}_{\text{calo}}^{(\beta=2)}$. Highlighted in red is the best variable in each studied energy range.}\label{table:top_improvement}
+\end{table}
+
+
+\subsection{Summary of the Results}\label{subsec:best_ROC}
+The following ROCs show the observables with the highest QCD rejection with the cluster-based default variables for $W$ \ref{fig:ROC_best_w}, Higgs \ref{fig:ROC_best_higgs} and Top \ref{fig:ROC_best_top} tagging for all studied energy ranges. (Assisted) tracks outperform clusters and input for substructure observables in almost every studied case due to their angular resolution. For tagging only slightly boosted Higgs bosons, they perform as good as clusters. These improvements are rising with energy since the jet constituents angular separation shrinks.
+\subsubsection{$W$ boson Tagging}
+\begin{figure}[H]
+\includegraphics[width=0.5\textwidth]{sascha_input/Appendix/W_best/ROC_ALL_h_recoJet_D2_bin1.pdf} \hspace{1mm}
+\includegraphics[width=0.5\textwidth]{sascha_input/Appendix/W_best/ROC_ALL_h_recoJet_D2_bin2.pdf}
+\bigskip
+\includegraphics[width=0.5\textwidth]{sascha_input/Appendix/W_best/ROC_ALL_h_recoJet_D2_bin3.pdf} \hspace{1mm}
+\includegraphics[width=0.5\textwidth]{sascha_input/Appendix/W_best/ROC_ALL_h_recoJet_D2_bin4.pdf}
+\bigskip
+\includegraphics[width=0.5\textwidth]{sascha_input/Appendix/W_best/ROC_ALL_h_recoJet_D2_bin5.pdf} \hspace{1mm}
+\includegraphics[width=0.5\textwidth]{sascha_input/Appendix/W_best/ROC_ALL_h_recoJet_D2_bin6.pdf}
+\caption{\footnotesize{ROCs showing QCD rejection against $W$ jet efficiency for $\text{D2}_{\text{TAS}}^{(\beta=1.7)}$ \& $\text{C2}_{\text{TAS}}^{(\beta=1.7)}$ compared to $\text{D2}_{\text{calo}}^{(\beta=1)}$. }}
+\end{figure}\label{fig:ROC_best_w}
+\subsubsection{Higgs Boson Tagging}
+\begin{figure}[H]
+\includegraphics[width=0.5\textwidth]{sascha_input/Appendix/Higgs_best/ROC_ALL_h_recoJet_D2_17_bin1.pdf} \hspace{1mm}
+\includegraphics[width=0.5\textwidth]{sascha_input/Appendix/Higgs_best/ROC_ALL_h_recoJet_D2_17_bin2.pdf}
+\bigskip
+\includegraphics[width=0.5\textwidth]{sascha_input/Appendix/Higgs_best/ROC_ALL_h_recoJet_D2_17_bin3.pdf} \hspace{1mm}
+\includegraphics[width=0.5\textwidth]{sascha_input/Appendix/Higgs_best/ROC_ALL_h_recoJet_D2_17_bin4.pdf}
+\bigskip
+\includegraphics[width=0.5\textwidth]{sascha_input/Appendix/Higgs_best/ROC_ALL_h_recoJet_D2_17_bin5.pdf} 
+\caption{\footnotesize{ROCs showing QCD rejection against Higgs jet efficiency for $\text{D2}_{\text{TAS}}^{(\beta=1.7)}$ \& $\text{D2}_{\text{track}}^{(\beta=1.7)}$ compared to $\text{D2}_{\text{calo}}^{(\beta=1)}$.}}
+\end{figure}\label{fig:ROC_best_higgs}
+\subsubsection{Top Quark Tagging}
+\begin{figure}[H]
+\includegraphics[width=0.5\textwidth]{sascha_input/Appendix/Top_best/ROC_ALL_h_recoJet_nSub32_2_bin1.pdf} \hspace{1mm}
+\includegraphics[width=0.5\textwidth]{sascha_input/Appendix/Top_best/ROC_ALL_h_recoJet_nSub32_2_bin2.pdf}
+\bigskip
+\includegraphics[width=0.5\textwidth]{sascha_input/Appendix/Top_best/ROC_ALL_h_recoJet_nSub32_2_bin3.pdf} \hspace{1mm}
+\includegraphics[width=0.5\textwidth]{sascha_input/Appendix/Top_best/ROC_ALL_h_recoJet_nSub32_2_bin4.pdf}
+\bigskip
+\includegraphics[width=0.5\textwidth]{sascha_input/Appendix/Top_best/ROC_ALL_h_recoJet_nSub32_2_bin5.pdf} \hspace{1mm}
+\includegraphics[width=0.5\textwidth]{sascha_input/Appendix/Top_best/ROC_ALL_h_recoJet_nSub32_2_bin6.pdf}
+\caption{\footnotesize{ROCs showing QCD rejection against Top jet efficiency for $\tau_{32,\;\text{TAS}}^{(\beta=1)}$ \& $\tau_{32,\;\text{TAS}}^{(\beta=1.7)}$ compared to $\tau_{32,\;\text{TAS}}^{(\beta=2)}$}}
+\end{figure}\label{fig:ROC_best_top}
+
+
+
