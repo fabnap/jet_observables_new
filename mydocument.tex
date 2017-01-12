@@ -63,13 +63,13 @@
 % \captionsetup{compatibility=false}
 
 % \newcommand{\pt}{p_{T}}
-\newcommand{\mta}{m^{TA}}
-\newcommand{\mtas}{m^{TAS}}
-\newcommand{\mcal}{m^{calo}}
-\newcommand{\mcomb}{m^{comb}}
-\newcommand{\mcombtas}{m^{comb}_{TAS}}
-\newcommand{\cme}{\sqrt{s}}
-\newcommand{\iqr}{\frac{1}{2}\: \times\: 68\% \:\textrm{IQnR/median}}
+\newcommand{\mta}{\ensuremath{m^\textrm{TA}}\xspace}
+\newcommand{\mtas}{\ensuremath{m^\textrm{TAS}}\xspace}
+\newcommand{\mcal}{\ensuremath{m^\textrm{calo}}\xspace}
+\newcommand{\mcomb}{\ensuremath{m^\textrm{comb}}\xspace}
+\newcommand{\mcombtas}{\ensuremath{m^\textrm{comb,\,TAS}}\xspace}
+\newcommand{\cme}{\ensuremath{\sqrt{s}}\xspace}
+\newcommand{\iqr}{\ensuremath{\frac{1}{2}\: \times\: 68\% \:\textrm{IQnR/median}}\xspace}
 \def\spvec#1{\left(\vcenter{\halign{\hfil$##$\hfil\cr \spvecA#1;;}}\right)}
 \def\spvecA#1;{\if;#1;\else #1\cr \expandafter \spvecA \fi}
 
@@ -121,7 +121,7 @@
 %-------------------------------------------------------------------------------
 
 
-Jets are collimated streams of particles resulting from quarks and gluons fragmentation and hadronization.
+Jets are collimated streams of particles resulting from quarks and gluons fragmentation and hadronisation.
 The distribution of energy inside a jet contains information about the initiating particle. When a massive
 particle such as a top quark, Higgs boson or W/Z bosons is produced with significant Lorentz boost and decays into
 quarks, the entire hadronic decay may be captured inside a single jet. The mass of such jets (jet mass)
@@ -142,105 +142,6 @@ The note ends with conclusions for the jet observables using subjet-assisted tra
 
 
 
-% %-------------------------------------------------------------------------------
-% \section{ATLAS detector}
-% \label{sec:detector}
-% %-------------------------------------------------------------------------------
-
-% ATLAS (A Toroidal ApparatuS) is a multi-purpose particle detector with nearly 4$\pi$ coverage in solid angle. A lead/liquid-argon
-% sampling electromagnetic calorimeter is split into barrel ($|\eta|$ $<$ 1.5) and end-cap (1.5 $<$ $|\eta|$ $<$ 3.2) sections.
-% A steel/scintillating-tile hadronic calorimeter covers the barrel region ($|\eta|$ $<$ 1.7) and two end-cap
-% copper/liquid-argon sections extend to higher pseudo-rapidity (1.5 $<$ $|\eta|$ $<$ 3.2). Finally, the forward
-% region (3.1 $<$ $|\eta|$ $<$ 4.9) is covered by a liquid-argon calorimeter with Cu (W), absorber in the electromagnetic (hadronic) section.
-% Inside the calorimeters there is a 2 T solenoid that surrounds an inner tracking detector which measures charged particle trajectories covering a pseudo-rapidity range $|\eta|$ $<$ 2.5 with pixel and silicon micro-strip detectors
-% (SCT) and additionally which covers the region $|\eta|$ $<$ 2.0 with a straw-tube transition radiation tracker (TRT).
-% Outside the calorimeter there is a muon spectrometer: a system of detectors for triggering up to $|\eta|$ $<$ 2.4 and
-% precision tracking chambers up to $|\eta|$ $<$ 2.7 inside a magnetic field supplied by three large superconducting toroid magnets.
-
-% A breakdown of the ATLAS sub-detector performance is shown in Table \ref{tab:recap}.
-
-% \begin{table}
-% \begin{center}
-% \begin{tabular}{l|r}
-% % \toprule
-% \hline
-% % \multicolumn{2}{c}{} \\
-% % \cmidrule(r){1-2}
-% \hline
-% % \cmidrule(r){1}
-% ATLAS    & Description and performance  \\
-% % \midrule
-% \hline
-
-% Magnetic field      & 2 T solenoid; 0.5 T toroid barrel and 1 T toroid end-cap         \\
-% \\
-% \cline{1-1}
-% Tracker       & Inner detector: IBL, Silicon pixel and strips, TRT\\
-%           & $\sigma_{p_T}/p_T \simeq   5\times 10^{-4}p_T \otimes 1\% $           \\
-%           \\
-% \cline{1-1}
-% EM calorimeter       & EMB, EMEC and pre-sampler (Liquid Argon and lead)           \\
-% & $\sigma_{E}/E \simeq 10\%/\sqrt{E} \otimes 0.7\%$ \\
-% \\
-% \cline{1-1}
-% Hadronic calorimeter & Tile (Fe and scintillating tiles) and HEC (Cu and LAr)              \\
-% & $\sigma_{E}/E \simeq 50\%/\sqrt{E} \otimes 3\%$ \\
-% \\
-% \cline{1-1}
-% Muons & Inner detector and muon spectrometers \\
-%           & $\sigma_{p_T}/p_T \simeq   2\% $ at 50 GeV           \\
-%           & $\sigma_{p_T}/p_T \simeq   10\%$ at 1  TeV           \\
-% \\
-% \cline{1-1}
-% Trigger &  L1 and HLT (L2 and EF)\\
-% & Rates from $\sim$40 MHz to $\sim$75 kHz (L1) and to $\sim$200 Hz (HLT)\\
-
-% \hline
-% \hline
-% % \bottomrule
-% \end{tabular}
-% \end{center}
-% % \end{table}
-% %-------------------------------------------------------------------------------
-% \section{Monte Carlo Samples}
-% \label{sec:mcsample}
-% %-------------------------------------------------------------------------------
-
-% % *refraseMT*
-% The samples used are divided into two main groups: SM background and beyond SM signal. The SM background includes the QCD multijet samples, produced with a falling $\pt$ spectrum. The beyond SM signals are $W'\to WZ\to q\bar{q}'q\bar{q}$, $Z'\to t\bar{t}$ (top quarks considered in the full hadronic channel ($t\to W(\to q\bar{q}')b$)) and RS-Graviton $\to hh \to b\bar{b}b\bar{b}$, i.e. final states have only jets in all the samples. The details of the samples are given in Table \ref{tab:mcsamples}; the masses considered span from 0.5 to 5 TeV to improve and diversify the kinematic space covered.
-
-% A set of kinematic distributions for the $W'$ is shown in Figure \ref{fig:wprimekinematic}: on the left the $\pt$ distribution where the kinks correspond to the Jacobian peak of the mass considered and the $\eta$ distribution on the right. The green dots represent the distribution before the selection, which is $\pt >$ 250 GeV and $|\eta|<$ 2.0 and the red dots after this selection. This selection typical for many searches for BSM physics.  All the other samples and the background can be found in the Appendix. 
-% In what follows, it will also be used the nomenclature \textit{boosted W/Z} for the $W'$ sample, \textit{boosted tops} for the $Z'$ sample, \textit{boosted Higgs} for the $G_{RS}$ sample and \textit{massive $W$} for the $W' \to \tilde{W}\tilde{W}$ with $m_{\tilde{W}}=m_t$.
-% % *refraseMT*
-
-% \begin{table}
-% \centering
-% \hspace*{-3em}\begin{tabular}{l|lllr}  
-% % \toprule
-% \hline
-% \hline
-% Process & ME Generator & ME PDFs &  UE Tune & Resonance Masses\\
-%   & \& Fragmentation &  & & \\
-
-% \hline
-% QCD multijet &Pythia 8&NNPDF23LO & A14& N/A \\
-% \hline
-% $W'\to WZ$ &Pythia 8&NNPDF23LO & A14& 1.5, 2.5, 3, 4, 5 TeV \\
-% \cline{1-1}
-% $Z'\to t\bar{t}$ &Pythia 8&NNPDF23LO & A14& 1.5, 1.75, 2.5, 3, 4, 5 TeV \\
-% \cline{1-1}
-% $G_{RS} \to hh(\to b\bar{b})$ &Pythia 8&NNPDF23LO & A14& 0.5, 1, 1.5, 2, 2.5, 3 TeV\\
-% \cline{1-1}
-% $W' \to \tilde{W}\tilde{W}$ &Pythia 8&NNPDF23LO & A14& 1.5, 2.5, 3, 4, 5 TeV \\
-% with $m_{\tilde{W}}=m_t$ & & & & \\
-% \hline
-% \hline
-% % \bottomrule
-% \end{tabular}
-% \caption[Overview of the Monte Carlo Samples used]{Overview of the Monte Carlo Samples used. The first line shows QCD standard model process, the second, the third and the forth the beyond SM samples considered; the last line the ``massive $W/Z$'' sample.}
-% \label{tab:mcsamples}
-% % \end{center}
-% \end{table}
 
 
 \input{fab1.tex}
@@ -255,6 +156,7 @@ The note ends with conclusions for the jet observables using subjet-assisted tra
 \subsubsection{n-Subjettiness}\label{subsec:nSub}
 \input{sascha_input/nSub}
 
+\clearpage
 \section{Figures of Merit for Performance Studies}\label{sec:FoM}
 \input{figureofmerit.tex}
 
@@ -276,7 +178,9 @@ This section shows the performance of (assisted) tracks compared to clusters as 
 \subsection{Performance with default $\beta$}
 \input{sascha_input/results_beta1}
 
-\section{Performance of Jet Substructure Observables with (assisted) Tracks and optimized $\beta$}\label{sec:beta_opt}
+\clearpage
+\newpage
+\section{Performance of Jet Substructure Observables with (assisted) Tracks and optimised $\beta$}\label{sec:beta_opt}
 \input{sascha_input/beta_opt}
 
 %----------------------------------
@@ -311,7 +215,7 @@ The $\mtas$ moreover is expected to have little to none benefit from the calibra
 \label{sec:conclusions}
 %----------------------------------
 % \subsection{Jet mass observables}
-The $\mtas$ variable was developed for the large-$R$ jet mass; it combines the information of the tracker- and calorimeter-system to achieve an higher precision in the jet mass reconstruction, correcting the missed neutral fraction which is absent in the tracker but not in the calorimeter.
+The \mtas variable was developed for the large-$R$ jet mass; it combines the information of the tracker- and calorimeter-system to achieve an higher precision in the jet mass reconstruction, correcting the missed neutral fraction which is absent in the tracker but not in the calorimeter.
 With respect to the $\mta$, it applies this correction at sub-jet by sub-jet level and not at jet by jet level, therefore providing a more accurate reconstruction. 
 It was shown in Monte Carlo simulation to be a very good observable confronting quantitatively with the other definitions which are either standard or in preparation, $\mcal$, $\mta$ and $\mcomb$.
 % In fact, it behaves better in terms of $\iqr$ and all the other ways to look at the figure of merit, the mass response, for the boosted $W/Z$ and QCD sample; is always better than the $\mta$ and similar to the $\mcal$ for the boosted tops and Higgs.
