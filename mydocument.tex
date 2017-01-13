@@ -35,6 +35,8 @@
 \usepackage[subcaption]{\ATLASLATEXPATH atlaspackage}
 \usepackage{overpic}	
 
+\usepackage{verbatim}
+
 \newcommand\crule[3][black]{\textcolor{#1}{\rule{#2}{#3}}}
 % Commonly used options:
 %  biblatex=true|false   Use biblatex (default) or bibtex for the bibliography.
@@ -270,6 +272,8 @@ For the very conclusion, the variables constructed in the work of this study, $\
 % If you use biblatex and either biber or bibtex to process the bibliography
 % just say \printbibliography here
 
+\printbibliography
+\begin{comment}
 \begin{thebibliography}{9}
 
 % \bibitem{pdg2014}
@@ -510,7 +514,8 @@ Jet Substructure and jet-by-jet tagging meeting:
 URL: https://indico.cern.ch/event/495766/contributions/1174422/attachments/1231007/1804520/JSS\_18Feb.pdf
 
 \end{thebibliography}
-\printbibliography
+\end{comment}
+%\printbibliography
 % If you want to use the traditional BibTeX you need to use the syntax below.
 %\bibliographystyle{bibtex/bst/atlasBibStyleWoTitle}
 %\bibliography{mydocument,bibtex/bib/ATLAS}
