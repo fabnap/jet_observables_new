@@ -68,8 +68,10 @@
 \newcommand{\mta}{\ensuremath{m^\textrm{TA}}\xspace}
 \newcommand{\mtas}{\ensuremath{m^\textrm{TAS}}\xspace}
 \newcommand{\mcal}{\ensuremath{m^\textrm{calo}}\xspace}
+\newcommand{\mcalo}{\ensuremath{m^\textrm{calo}}\xspace}
 \newcommand{\mcomb}{\ensuremath{m^\textrm{comb}}\xspace}
 \newcommand{\mcombtas}{\ensuremath{m^\textrm{comb,\,TAS}}\xspace}
+\newcommand{\larger}{\ensuremath{\textrm{large}\hbox{-}R}\xspace}
 \newcommand{\cme}{\ensuremath{\sqrt{s}}\xspace}
 \newcommand{\iqr}{\ensuremath{\frac{1}{2}\: \times\: 68\% \:\textrm{IQnR/median}}\xspace}
 \def\spvec#1{\left(\vcenter{\halign{\hfil$##$\hfil\cr \spvecA#1;;}}\right)}
@@ -123,16 +125,12 @@
 %-------------------------------------------------------------------------------
 
 
-Jets are collimated streams of particles resulting from quarks and gluons fragmentation and hadronisation.
-The distribution of energy inside a jet contains information about the initiating particle. When a massive
-particle such as a top quark, Higgs boson or W/Z bosons is produced with significant Lorentz boost and decays into
-quarks, the entire hadronic decay may be captured inside a single jet. The mass of such jets (jet mass)
-is one of the most powerful tools for distinguishing massive particle decays from the continuum multijet
-background; the ratios of Energy Correlation Functions C2 and D2 (see Reference \cite{bib:ECF}) and n-Subjettiness $\tau_{21}$ and $\tau_{32}$ (see Reference \cite{bib:nsub}) provide an ad-hoc tool purposely developed for the multijet background and constitute a fundamental part of many for boson taggers.
-This note documents the so-called subjet-assisted techniques with the ATLAS detector. 
-The track-assisted subjet mass $m^{TAS}$ definition is presented and confronted with the standard development in ATLAS, $m^{comb}$ and $m^{TA}$. 
-Energy Correlation Functions and n-Subjettiness with the modified subjet-assisted technique are presented and confronted with the standard one in ATLAS.
-The note ends with conclusions for the jet observables using subjet-assisted tracks.
+Many new physics models predict signatures which involve $W$, $Z$, Higgs bosons and top quarks that are highly boosted, i.e., with transverse momenta \pt of 0.5 TeV and above. In the context of the standard model (SM), measurements of processes with such boosted particles like for example pair-production of electroweak gauge bosons are becoming interesting at $\sqrt s =13~\TeV$. To probe these rare processes, hadronic decay modes of $W$, $Z$, Higgs bosons and top quarks are favourable due to their large branching ratio. If the boost of these particles is much larger than their invariant mass, their decays become highly collimated and can be reconstructed as one single large-radius $R$ jet with $R\gtrapprox\frac{2m}{\pt}$. The distribution of energy inside a jet, i.e., the {\em jet substructure}, contains information about the initiating particle. The invariant mass of jets from hadronic decays of $W$, $Z$, Higgs bosons and top quarks, which in the following are referred to as $W$, $Z$, Higgs, and top jets, is one of the most powerful tools for distinguishing such decays from the continuum multijet background~\cite{art35}. The reconstruction of the jet mass is one of the focal points of this note. The topological distribution of the energy inside large-$R$ jets probed through jet substructure observables like the ratios of Energy Correlation Functions (ECF) C2 and D2~\cite{bib:ECF} and n-subjettiness $\tau_{21}$ and $\tau_{32}$~\cite{bib:nsub} provides further discrimination of $W$, $Z$, Higgs, and top jets against  multijet background. The reconstruction of these observables is the second focal point of this document.
+
+The reconstruction of jet substructure observables becomes more challenging as the transverse momentum of jets increases, which causes increasing collimation of the decay products. This effect is driven by the finite angular resolution of the ATLAS calorimeter, which is typically used to reconstruct the jet substructure observables~\cite{art35}. This note presents an approach to overcome this limitation by considering the information of the tracker, which provides excellent angular resolution for the charged fraction of the jet. As the tracker is not sensitive to the neutral fraction of the jet, the momentum scale of the tracks from charged particles is corrected or ``assisted''. The simplest way to apply this correction is per large-$R$ jet, as is done for the ATLAS standard jet mass observable \mta~\cite{art35}. As we demonstrate, its performance can be further improved by applying the correction per subjet, ``subjet-assistance'', resulting in \mtas. Combining \mtas with the traditional calorimeter-based jet mass observable \mcalo, an improved performance relative to \mcomb, the combination of \mta and \mcalo, can be obtained.
+In a similar spirit, the performance of jet substructure observables like C2, D2, $\tau_{21}$, and $\tau_{32}$ can be improved with subjet-assisted tracks. This note defines an algorithm for subjet-assistance, and quantifies the performance gain for the above observables in ATLAS MC simulation of $W$, $Z$, Higgs, and top jets using Monte Carlo (MC) simulations. 
+
+After a short review of simulated MC samples used in Section~\ref{sec:mcsample}, an algorithm to reconstruct subjet-assisted tracks is presented in Section~\ref{sec:objdef}, and its application to calculate the jet mass \mtas and other substructure observables is discussed. After introducing the Figure of Merit in Section~\ref{sec:FoM}, the performance of \mtas is evaluated and compared to that of standard approaches like \mcalo, \mcomb, and \mta in Section~\ref{sec:mtas}. The combination of \mtas with \mcalo is discussed in Section~\ref{sec:mcombtas}, and compared with the standard development in ATLAS, \mcomb. Energy Correlation Functions and n-subjettiness with subjet-assisted tracks are presented and compared with the standard one in ATLAS in Section~\ref{sec:def_beta}. Further gain in performance of such observables can be achieved with optimising the weight given to the angular part of the observables, which benefits from its better measurement with subjet-assisted tracks. This ultimate performance gain is presented in Section~\ref{sec:beta_opt}. After discussing briefly systematic uncertainties on observables reconstructed from subjet-assisted tracks in Section~\ref{sec:syst}, the note is concluded and an outlook is given in Section~\ref{sec:conclusions}.
 
 % %-------------------------------------------------------------------------------
 % \section{Theory Introduction}
@@ -188,9 +186,9 @@ This section shows the performance of (assisted) tracks compared to clusters as 
 %----------------------------------
 
 \clearpage
-\section{Uncertainties on observables with sub-jet-assisted tracks}
-This chapter gives a brief overview of the uncertainties on the track-assisted (sub-jet) mass variable. 
-For $\mta$ the uncertainties are smaller than calorimeter-based jet mass variables because of the way it is constructed, $\mta=m^{trk}\times p_T^{calo}/p_T^{trk}$: the ratio $m^{trk}/p_T^{trk}$ causes a cancellation of the tracking uncertainties to a large extent, which are smaller than $\mcal$. The remaining term $p_T^{calo}$ is the additional one where uncertainties on this variable need to be evaluated with special care.
+\section{Uncertainties on observables with sub-jet-assisted tracks}\label{sec:syst}
+This Section gives a brief overview of the uncertainties on the track-assisted (sub-jet) mass variable. 
+For $\mta$ the uncertainties are smaller than calorimeter-based jet mass variables because of the way it is constructed, $\mta=m^\textrm{trk}\times p_T^\textrm{calo}/p_T^\textrm{trk}$: the ratio $m^\textrm{trk}/p_T^\textrm{trk}$ causes a cancellation of the tracking uncertainties to a large extent, which are smaller than $\mcal$. The remaining term $p_T^\textrm{calo}$ is the additional one where uncertainties on this variable need to be evaluated with special care.
 
 \begin{figure}[!ht]
   \centering
@@ -200,12 +198,12 @@ For $\mta$ the uncertainties are smaller than calorimeter-based jet mass variabl
 \end{figure}
 
 
-For what concerns the $\mtas$, the tracking uncertainties are expected to be identical to the $\mta$, because of the identical use of tracks in both variables, as also discussed in the BOOST Conference Note \cite{art35}.
-The only significant difference in this regard of $\mta$ with respect to $\mtas$ is the $p_T^{jet}$ instead of the $p_T^{subjet}$: the uncertainties in the first one are calculated in-situ using $p_T$ balance methods, and they are generally well-behaved; for the second one, the uncertainties are also expected to lay in the same order of magnitude. In Figure \ref{fig:uncert} the comparison of the uncertainties for the $\mcal$ on the left and $\mta$ on the right shows the smaller fractional JMS uncertainties in the use of the track-assisted method.
+For what concerns the $\mtas$, the tracking uncertainties are expected to be identical to the $\mta$, because of the identical use of tracks in both variables, as also discussed in Ref.~\cite{art35}.
+The only significant difference in this regard of $\mta$ with respect to $\mtas$ is the $p_T^{jet}$ instead of the $p_T^\textrm{subjet}$: the uncertainties in the first one are calculated in-situ using $p_T$ balance methods, and they are generally well-behaved; for the second one, the uncertainties are also expected to lay in the same order of magnitude. In Figure \ref{fig:uncert} the comparison of the uncertainties for the $\mcal$ on the left and $\mta$ on the right shows the smaller fractional JMS uncertainties in the use of the track-assisted method.
 
-The path to bring $\mtas$ ready to usage needs of course to evaluate the uncertainties on the  $p_T^{subjet}$ which can be provided with the R-Scan procedure which includes the anti-k$_t$ subjet of radius of 0.2; those were already showed to have a similar performance of the k$_t$ subjet used as standard.
+The path to bring $\mtas$ ready to usage needs of course to evaluate the uncertainties on the  $p_T^\textrm{subjet}$ which can be provided with the R-Scan procedure which includes the anti-k$_t$ subjet of radius of 0.2; those were already showed to have a similar performance of the k$_t$ subjet used as standard.
 
-The $\mtas$ moreover is expected to have little to none benefit from the calibration procedure which could be provided from the R-Scan as well, as already shown and discussed in the previous chapter. 
+The $\mtas$ moreover is expected to have little to none benefit from the calibration procedure which could be provided from the R-Scan as well, as already shown and discussed in the previous Section. 
 
 
 
@@ -217,43 +215,24 @@ The $\mtas$ moreover is expected to have little to none benefit from the calibra
 \label{sec:conclusions}
 %----------------------------------
 % \subsection{Jet mass observables}
-The \mtas variable was developed for the large-$R$ jet mass; it combines the information of the tracker- and calorimeter-system to achieve an higher precision in the jet mass reconstruction, correcting the missed neutral fraction which is absent in the tracker but not in the calorimeter.
-With respect to the $\mta$, it applies this correction at sub-jet by sub-jet level and not at jet by jet level, therefore providing a more accurate reconstruction. 
-It was shown in Monte Carlo simulation to be a very good observable confronting quantitatively with the other definitions which are either standard or in preparation, $\mcal$, $\mta$ and $\mcomb$.
-% In fact, it behaves better in terms of $\iqr$ and all the other ways to look at the figure of merit, the mass response, for the boosted $W/Z$ and QCD sample; is always better than the $\mta$ and similar to the $\mcal$ for the boosted tops and Higgs.
-% Moreover, it is a slightly worse observable than the $\mcomb$, yet being comparable, and avoiding the development of ad-hoc weights.
-The optimal configuration of $\mtas$ is shown and confronted with different approaches, in particular in terms of different trimming procedure of the large-$R$ jet to be used as an input.
-All the components of the observable have been studied with the use of truth Monte Carlo information without detector effect, in order to evaluate quantitatively its limits and strengths; the track $\pt$ measure degradation was found to be the cause of the variable decreasing performance at higher transverse momenta.
+A new algorithm to reconstruct the invariant mass of large-$R$ jets and jet substructure observables from {\em subjet-assisted tracks} is implemented. It combines the information of the tracker and the calorimeter to benefit from the excellent angular resolution of the former and from the superior energy measurement of the latter. The neutral fraction of the jet missed by the tracker is corrected by rescaling the \pt of tracks per subjet of the groomed large-$R$ jet. These subjet-assisted tracks are then used to reconstruct the jet mass and jet substructure observables in a standard fashion.
 
-The $\mcombtas$ is the logical extension of the $\mtas$, which improves by construction the results beyond the $\mcal$ and the $\mtas$, combining these two variables on the same way of the $\mcomb$, but taking into account the higher correlation factor which is inherited from the sub-jet usage.
-Weights for its construction can be in both cases either derived specifically for the sample considered, or constructed on average with the QCD sample, in this case getting a sub-optimal performance. 
-In all the cases studied, it has a better behavior than the $\mcomb$, $\mcal$ and $\mta$.
+In the context of the large-$R$ jet mass, the \mtas variable is developed. Its performance is evaluated  in MC simulations of $W$, $Z$, Higgs, and top jets, and an improvement in jet mass resolution by up to 40\% is found relative to  \mcalo, the standard approach using calorimeter information only. For $W$ jets, \mtas outperforms or is at least as good as \mcalo throughout the entire kinematic phase space studied. As expected, \mtas outperforms \mta, which assists tracks per-jet rather than per-subjet, in all regions of phase space for all samples studied. 
 
-% \subsubsection{Outlook}
-% The outlook of the $\mtas$ and $\mcombtas$ variables follows two main scenarios, concerning the calibration and uncertainties determination which are necessary to get this observables ready to be used. The procedure involved are already fully understood, since the the same was applied or is being applied for the $\mta$ and $\mcomb$.
+Different approaches to further optimise \mtas like the selection criteria for tracks and the trimming of the \larger jet are studied, identifying the \mtas algorithm above as the best choice. All the inputs used to reconstruct \mtas are studied in MC simulations without detector effects and with simplified calibration procedures in order to identify the ultimate limitations of \mtas. In particular, the \pt reconstruction of tracks is found to cause the decrease in performance of \mtas at very high \larger jet \pt.
 
-% For the simple scenario here the procedure that would take place is the direct Monte Carlo calibration of the $\mtas$, aiming at correcting the reconstructed jet mass to the particle-level jet mass by applying the calibration factors derived from QCD multijet events, an analogous procedure to the one described in Section \ref{sec:calib} for the jet energy scale.
+The $\mcombtas$ observable is the logical extension of $\mtas$ through combination with \mcalo in a similar fashion is for \mcomb, which combines \mta and \mcalo, but taking into account the correlation factor. Combination weights for \mcombtas and \mcomb construction can be derived either specifically for the signal sample considered, or for the QCD multijet background sample, which results in a somewhat sub-optimal performance. In all cases studied, \mcombtas outperforms $\mcomb$, $\mcal$, and $\mta$.
 
-% The more complex scenario considers an additional calibration to the subjet with R=0.2, which is already at an advanced stage within ATLAS for anti-k$_t$ reclustering algorithm (it has a slightly worse performance than k$_t$, as presented previously). 
 
-% The uncertainties are expected to be similar to the one which were derived for the $\mta$ and which are compared to the $\mcal$ on Figure \ref{fig:uncert}; the tracking uncertainties are smaller for the track-assisted mass because of the ratio $m^{track}/p_T^{track}$ and will be smaller as well for the track-assisted  sub-jet mass since it uses the same ratio.
+The performance of jet substructure observables C2, D2, $\tau_{21}$, and $\tau_{32}$ is studied with subjet-assisted tracks, with standard tracks that are topologically matched to the subjets of the groomed \larger jet, and with calorimeter clusters. It is shown that the better angular resolution of tracks can help to reduce the QCD multijet background, especially for very high energies. Optimal results can be achieved by tuning the angular weighting $\beta$ in  C2, D2, $\tau_{21}$, and $\tau_{32}$ to slightly higher values. In our study, a value of $\beta=1.7$ yields the highest background rejections in most of the cases.  
 
-% In-situ uncertainties were derived for the $\mta$ with a sample of enriched top-quark; the same technology used here can be applied to the $\mtas$.
 
-% In the more complex scenario, the uncertainties could be derived for the subjet R=0.2 reclustered with anti-k$_{t}$.
-%------------------------------------------------------------------------------
-% \subsection{Energy Correlation Functions and n-Subjettiness}
+Subjet-assisted tracks perform similar to calorimeter clusters at low \pt of the \larger jet, and are superior for lower and intermediate boosts. At very high energies, subjet-assisted tracks and standard tracks perform similarly in terms of QCD rejection. It is shown that the better angular resolution of tracks can help to reduce the QCD multijet background by up to 100\% in boosted $W$, Higgs and Top tagging cases for the same tagging efficiency using subjet-assisted tracks, and up to 50\% using standard tracks.
 
-The performance of the Energy Correlation Functions and n-Subjettiness observables was studied with tracks and subjet-assisted tracks (TAS) compared to the default calculation with calorimeter clusters. The assisting procedure for these observables is the same single-track scaling method used for $\mtas$. It was shown, that the better angular resolution of tracks can help to reduce the QCD background in boosted $W$, Higgs and Top tagging cases, especially for very high energies. Optimal results can be achieved by tuning the angular weighting to slightly higher values. In our study, a value of $\beta=1.7$ yield the highest background rejections in most of the cases. 
 
-Subjet-assisted tracks performed superior for lower and intermediate boosts. At very high energies, the assisting was shown to loose effect on the studied observables and tracks and TAS equally outperform the cluster based variables in terms of QCD rejection.
-
-For the three cases of $W$, Higgs and Top tagging, the optimal variables were identified and the $p_{\text{T}}$ behavior of the cut-value for two different working points were studied. 
-
-%For the very conclusion, both the variables constructed in the work of this thesis, $\mtas$ and $\mcombtas$, exhibit a better performance of their counterparts, $\mta$ and $\mcomb$, which are now ready to be use or in preparation within the ATLAS collaboration, and share the same advantages -and disadvantages. Further steps are necessary to get this observables to usage: calibration and uncertainties.
 
 %%Sascha: Adding my stuff to this part if OK
-For the very conclusion, the variables constructed in the work of this study, $\mtas$ and $\mcombtas$, as well as the TAS and track based C2/D2/$\tau_{21}$/$\tau_{32}$, exhibit a better performance as their counterparts, $\mta$ and $\mcomb$, respectively JSS observables calculated from topo-clusters. The introduced observables are now ready to use or in preparation within the ATLAS collaboration, and share the same advantages -and disadvantages. Further steps are necessary to get this observables to usage: calibration (mass) and uncertainties (mass and further substructure observables).
+In conclusion, the $\mtas$, $\mcombtas$, C2, D2, $\tau_{21}$, and $\tau_{32}$ observables reconstructed using subjet-assisted tracks provide a better performance than their counterparts reconstructed using calorimeter clusters. The proposed observables are now ready to use within the ATLAS collaboration, or in preparation. Additional work is needed for their calibration (jet mass) and the evaluation of their uncertainties (jet mass and other substructure observables).
 
 %-------------------------------------------------------------------------------
 \clearpage

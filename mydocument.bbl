@@ -16,6 +16,24 @@
   {}
 \endgroup
 
+\entry{art35}{report}{}
+  \field{number}{ATLAS-CONF-2016-035}
+  \field{title}{{Jet mass reconstruction with the ATLAS Detector in early Run 2
+  data}}
+  \verb{url}
+  \verb http://cds.cern.ch/record/2200211
+  \endverb
+  \list{location}{1}{%
+    {Geneva}%
+  }
+  \list{institution}{1}{%
+    {CERN}%
+  }
+  \field{type}{techreport}
+  \field{year}{2016}
+  \warn{\item Invalid format of field 'month'}
+\endentry
+
 \entry{bib:ECF}{article}{}
   \name{author}{3}{}{%
     {{}%
@@ -79,6 +97,86 @@
   \field{eprinttype}{arXiv}
   \field{eprintclass}{hep-ph}
   \field{year}{2011}
+\endentry
+
+\entry{antiktalgo}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Cacciari}{C.}%
+     {Matteo}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Salam}{S.}%
+     {Gavin~P.}{G.~P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Soyez}{S.}%
+     {Gregory}{G.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{CMSGPSG1}
+  \strng{fullhash}{CMSGPSG1}
+  \verb{doi}
+  \verb 10.1088/1126-6708/2008/04/063
+  \endverb
+  \verb{eprint}
+  \verb 0802.1189
+  \endverb
+  \field{pages}{063}
+  \field{title}{{The Anti-k(t) jet clustering algorithm}}
+  \field{volume}{04}
+  \field{journaltitle}{JHEP}
+  \field{eprinttype}{arXiv}
+  \field{eprintclass}{hep-ph}
+  \field{year}{2008}
+\endentry
+
+\entry{substructure1}{article}{}
+  \true{moreauthor}
+  \name{author}{1}{}{%
+    {{}%
+     {Aad}{A.}%
+     {Georges}{G.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{AG+1}
+  \strng{fullhash}{AG+1}
+  \verb{doi}
+  \verb 10.1007/JHEP09(2013)076
+  \endverb
+  \verb{eprint}
+  \verb 1306.4945
+  \endverb
+  \field{pages}{076}
+  \field{title}{{Performance of jet substructure techniques for large-$R$ jets
+  in proton-proton collisions at $\sqrt{s}$ = 7 TeV using the ATLAS detector}}
+  \field{volume}{09}
+  \field{journaltitle}{JHEP}
+  \field{eprinttype}{arXiv}
+  \field{eprintclass}{hep-ex}
+  \field{year}{2013}
+\endentry
+
+\entry{presentation}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Napolitano}{N.}%
+     {Fabrizio}{F.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{NF1}
+  \strng{fullhash}{NF1}
+  \verb{url}
+  \verb https://indico.cern.ch/event/495766/contributions/1174422/attachments/1
+  \verb 231007/1804520/JSS_18Feb.pdf
+  \endverb
+  \field{journaltitle}{talk given in the Jet Substructure and jet-by-jet
+  tagging meeting on 18 Feb 2016}
 \endentry
 
 \entry{bib:power_counting}{article}{}
