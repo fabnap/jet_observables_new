@@ -1,15 +1,13 @@
-
-Jet substructure observables are used to distinguish between different jet topologies, corresponding to signal and background events. In $W$ and Higgs jets, originate from two quarks, a structure of two angular separated, hard energy depositions (two-prong) is expected. Top jets feature three-prong structure from the $b$ quark and the hadronically decaying $W$ boson if all decay products are caught in one large radius jet (typically $p_{\text{T}}\gtrsim 2m_{Top}$). The background are QCD jets which are characterized by a single hard substructure with diffuse, soft wide-angle radiation. These observables are calculated from the jet constituents, which are calorimeter topo-clusters in the default case or tracks and subjet-assisted tracks as studied here.
+In $W$ and Higgs jets, which result from the hadronisation of two quarks at Born level, a structure of two angular separated, hard energy depositions (two-prong) is expected. Top jets feature a three-prong structure from the $b$ quark and the hadronically decaying $W$ boson if all decay products are caught in one large radius jet (typically, for  $\pt\gtrsim 2m_{t}$). The dominant background are typically QCD jets which are characterised by a single hard substructure with diffuse, soft wide-angle radiation. These inputs and algorithms to calculate jet substructure observables are discussed in Sections~\ref{sec:tasinputs} and~\ref{sec:tasalgo}.
 
 \subsubsection{Prior Mass-Cut}
-Tagging variables are usually used after applying a mass-cut around the interval that contains 68\% of the signal events. Therefore, a cut is applied on the calibrated mass of the large-R calorimeter jet which is calculated to cover the smallest interval around the peak mass that contains 68\% of the signal events. In the Higgs tagging case, there is not enough statistics to derive a conclusive result for $p_{\mathrm{T}} > 2000 \, \text{GeV}$. Hence this study is restricted to the five lower $p_{\mathrm{T}}$ bins.
+Tagging variables are usually used after applying a cut on the jet mass around the interval that contains 68\% of signal events. Therefore, prior to tagging with the n-subjettiness or C2/D2 variables, a cut is applied on the calibrated mass of the large-R calorimeter jet. The mass window is calculated to cover the smallest interval around the peak mass that contains 68\% of the signal events per \pt bin. In the Higgs tagging case, there is not enough statistics to derive a conclusive result for $p_{\mathrm{T}} > 2000~\GeV$. Hence this study is restricted to the five lower $p_{\mathrm{T}}$ bins. The mass windows per \pt range are summarised in Table~\ref{table:mass_cut}.
 
-Prior to tagging with the n-subjettiness or C2/D2 variables, a cut on the calibrated calorimeter jet mass is applied, given that the mass is the main discriminant in QCD jet rejection. This cut is defined to choose the smallest interval around the peak mass containing 68\% of the signal. However, the reconstructed mass depends on the $p_{\mathrm{T}}$ region, therefore a different cut was calculated for every region to meet the requirements.
-\begin{table}[]
+\begin{table}[b]
 \centering
 \begin{tabular}{l||ll||ll||ll}
-  &  \textbf{W boson}                                                    &                                 &  \textbf{Higgs boson}                                  &                                &    \textbf{Top quark}                                  &                                  \\ \hline
-$p_{\mathrm{T}} \, \text{[GeV]}$   & \multicolumn{1}{l|}{Mass [GeV]} & $\frac{1}{\epsilon_{bgr}}$ & \multicolumn{1}{l|}{Mass [GeV]} & $\frac{1}{\epsilon_{bgr}}$ & \multicolumn{1}{l|}{Mass [GeV]}  & $\frac{1}{\epsilon_{bgr}}$ \\ \hline \hline
+  &  \textbf{W jets}                                                    &                                 &  \textbf{Higgs jets}                                  &                                &    \textbf{Top jets}                                  &                                  \\ \hline
+$p_{\mathrm{T}} \, \text{[GeV]}$   & \multicolumn{1}{l|}{Mass [GeV]} & $\frac{1}{\epsilon_{\rm bgr}}$ & \multicolumn{1}{l|}{Mass [GeV]} & $\frac{1}{\epsilon_{\rm bgr}}$ & \multicolumn{1}{l|}{Mass [GeV]}  & $\frac{1}{\epsilon_{\rm bgr}}$ \\ \hline \hline
 250 - 500 & \multicolumn{1}{l|}{63 - 85}                        & 10.8                            & \multicolumn{1}{l|}{56 - 167}          & 3.8                             & \multicolumn{1}{l|}{77 - 191}          & 6.3                             \\ \cline{1-7} 
 500 - 800 & \multicolumn{1}{l|}{72 - 92}                        & 13.6                            & \multicolumn{1}{l|}{92 - 150}          & 7.3                             & \multicolumn{1}{l|}{117 -205}          & 6.9                             \\ \cline{1-7} 
 800 - 1200 & \multicolumn{1}{l|}{76 - 104}                       & 9.6                             & \multicolumn{1}{l|}{98 - 143}          & 9.5                             & \multicolumn{1}{l|}{122 - 218}         & 6.5                             \\ \cline{1-7} 
@@ -17,7 +15,8 @@ $p_{\mathrm{T}} \, \text{[GeV]}$   & \multicolumn{1}{l|}{Mass [GeV]} & $\frac{1}
 1600 - 2000 & \multicolumn{1}{l|}{79 - 115}                       & 5.6                             & \multicolumn{1}{l|}{91 - 170}          & 4.4                             & \multicolumn{1}{l|}{121 - 235}         & 5.6                             \\ \cline{1-7} 
 $> 2000$ & \multicolumn{1}{l|}{80 - 126}                       & 4.2                             & \multicolumn{1}{l|}{/}                 & /                               & \multicolumn{1}{l|}{123 - 251}         & 4.8                             \\ \hline
 \end{tabular}
-\caption{\footnotesize{Studied $p_{\mathrm{T}}$ regions and corresponding calculated 68\% mass intervals along with the background rejections from the mass cut for $W$ boson, Higgs boson and Top quark jets.}} \label{table:mass_cut}
+\caption{{Studied $p_{\mathrm{T}}$ regions and corresponding calculated 68\% mass intervals along with the background rejections from the mass cut for $W$, Higgs, and top jets.}} 
+\label{table:mass_cut}
 \end{table} 
 
 

@@ -99,6 +99,73 @@
   \field{year}{2011}
 \endentry
 
+\entry{bib:schaetzel}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Schaetzel}{S.}%
+     {Sebastian}{S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Spannowsky}{S.}%
+     {Michael}{M.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{SSSM1}
+  \strng{fullhash}{SSSM1}
+  \verb{doi}
+  \verb 10.1103/PhysRevD.89.014007
+  \endverb
+  \verb{eprint}
+  \verb 1308.0540
+  \endverb
+  \field{number}{1}
+  \field{pages}{014007}
+  \field{title}{{Tagging highly boosted top quarks}}
+  \field{volume}{D89}
+  \field{journaltitle}{Phys. Rev.}
+  \field{eprinttype}{arXiv}
+  \field{eprintclass}{hep-ph}
+  \field{year}{2014}
+\endentry
+
+\entry{bib:tweedie}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Katz}{K.}%
+     {Andrey}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Son}{S.}%
+     {Minho}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Tweedie}{T.}%
+     {Brock}{B.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{KASMTB1}
+  \strng{fullhash}{KASMTB1}
+  \verb{doi}
+  \verb 10.1007/JHEP03(2011)011
+  \endverb
+  \verb{eprint}
+  \verb 1010.5253
+  \endverb
+  \field{pages}{011}
+  \field{title}{{Jet Substructure and the Search for Neutral Spin-One
+  Resonances in Electroweak Boson Channels}}
+  \field{volume}{03}
+  \field{journaltitle}{JHEP}
+  \field{eprinttype}{arXiv}
+  \field{eprintclass}{hep-ph}
+  \field{year}{2011}
+\endentry
+
 \entry{antiktalgo}{article}{}
   \name{author}{3}{}{%
     {{}%
@@ -177,6 +244,7 @@
   \endverb
   \field{journaltitle}{talk given in the Jet Substructure and jet-by-jet
   tagging meeting on 18 Feb 2016}
+  \field{year}{2016}
 \endentry
 
 \entry{bib:power_counting}{article}{}
@@ -274,6 +342,15 @@
   \field{journaltitle}{Eur. Phys. J.}
   \field{eprinttype}{arXiv}
   \field{eprintclass}{hep-ex}
+  \field{year}{2016}
+\endentry
+
+\entry{highlumi}{article}{}
+  \verb{url}
+  \verb https://twiki.cern.ch/twiki/bin/view/AtlasPublic/JetSubstructureECFA201
+  \verb 4
+  \endverb
+  \field{journaltitle}{JetSubstructureECFA2014 AtlasPublic TWiki}
   \field{year}{2016}
 \endentry
 

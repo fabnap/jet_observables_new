@@ -1,4 +1,4 @@
-\chapter{ATLAS Detector: Further Details}
+\section{ATLAS Detector: Further Details}
 Further details here about the ATLAS detector are given.
 \section{Muon subdetectors}
 \subsection{RPC}
@@ -34,7 +34,7 @@ use more than one algorithm to assess the luminosity. These
 multiple detectors and algorithms are characterized by a significant different acceptance, response to pile-up, and sensitivity to instrumental effects and to beam-induced backgrounds.  
 
 
-\chapter{Parton Shower and Hadronization Details}
+\section{Parton Shower and Hadronization Details}
 \section{Parton Shower}
 To perform a quantative study of the parton shower, one can start from the simple 2 $\to$ 2 process with the further splitting in into quarks and gluons, e.g. $q\to qg$, $g\to q\bar{q}$ and $g\to gg$. Parton shower can originate from initial state radiation (ISR) or final state radiation (FSR) like in Figure \ref{fig:factorization}. For details on this section, see \cite{partonshower}. 
 The resulting process can now be depicted as $$2 \to 2 \otimes \textrm{ISR} \otimes \textrm{FSR}$$   
@@ -100,7 +100,7 @@ In the first one, which is first one also historically in PETRA and PEP, gluonic
 In the (Lund) string model, which is similar to the independent fragmentation, $q\bar{q}$ interaction is described as string interaction with $V(r)\sim kr$, with $r$ being the distance, $k=|\frac{dE}{dz}|=|\frac{dp_z}{dz}|=|\frac{dE}{dt}|=|\frac{dp_z}{dt}|$ and neglecting the Coulomb part of the interaction. When tension reaches the critical values, the string breaks, forming new $q\bar{q}$ pair. See Figure \ref{fig:string} for a schematic representation. 
 
 In the cluster model, hadronization mechanism is based on color pre-confinement; in fact gluons split to quark-antiquark pairs and nearby partons in cascade arrange themselves in color-neutral clusters, preferably at small invariant mass, down to the QCD scale, $\mathcal{O}$(200 MeV). With respect to the string model, it has the advantage of having a simple flavor composition with fewer parameters, but a less predictive energy-momentum description with more parameters.
-\chapter{Topo-Clustering and Local Calibration Weighting}
+\section{Topo-Clustering and Local Calibration Weighting}
 \subsubsection{Topo-Clusters}
 Topological cell clustering or topo-clustering, is the process where the calorimeter cells are grouped together in order to find energy deposited from the hard-scattering process. The result of topo-clustering is the formation of topo-cluster, in a way that suppresses calorimeter contribution from noise related effects, but still maintaining the activity from the underlying physical process.
 The topo-clustering works as follow: first a seed cell is defined, and then other neighboring cells are added to the seed if their energy is above a noise threshold. 
@@ -120,7 +120,7 @@ used are the energy density in the cells forming them, the fraction of their ene
 The natural requirement which has to be satisfied at this point is that the calorimeters cells should be then (three-dimensionally) ``grouped'' together, in order to reconstruct the energy of the hard-scattered particle. This is done in ATLAS in two steps: first the collection of calorimeter energy deposit represented as topo-clusters is created; then those objects are used as input for the jet reconstruction algorithm (here we are speaking of topo-clusters for the reconstruction of calorimeter jets; however other input can be tracks for track-jets and truth particles for truth-jets). 
 Corrections are applied to the cluster energy to account for the energy deposited in the calorimeter, but outside of clusters and energy deposited in material before and in between the calorimeters. Jets are formed from calibrated clusters by using dedicated reclustering algorithms, described in the body of the thesis.
 
-\chapter{Pile-Up and Underlying Event}
+\section{Pile-Up and Underlying Event}
 The \textit{pile-up} is a term used to describe the jets coming from another interaction in the same bunch-crossing (\textit{in-time pile-up}), i.e. coming form another interaction at low-$\pt$ which happens together with the hard-scattering, or in another bunch-crossing (\textit{out-of-time pile-up}), before or after the hard-scattering. When sub-detectors are sensitive to several bunch-crossing or their electronics integrate over more than 25 ns, these collisions can affect the signal in the collision of interest.
 
 \begin{wrapfigure}{r}{0.5\textwidth}
@@ -161,7 +161,7 @@ Other relatively small sources of contamination can be e.g. cavern background, b
     \label{fig:trimmingperformance}
 \end{figure}
 
-\chapter{Additional Grooming Techniques}
+\section{Additional Grooming Techniques}
 The standard grooming technique used for the optimization studies of this thesis was described in the body; however there are two common choices which are worth mentioning here: the \textit{split-filtering} and the \textit{pruning}
 
 \section{Split-Filtering}
@@ -189,7 +189,7 @@ The pruning algorithm is widely used in CMS; it works in a similar manner as the
  \item $j_1$ and $j_2$ are merged only if one or both of those criteria are met, else $j_2$ is discarded and the algorithm continues.
 \end{itemize}
 
-\chapter{Limitation of the $\mtas$}
+\section{Limitation of the $\mtas$}
 
 In this Appendix, additional results on the limitation of the $\mtas$ based on MC studies without detector interactions are presented. In particular, the truth study presented for boosted $W/Z$ decay in the thesis is here extended for boosted top quark decays.
 
